@@ -1,0 +1,750 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head> 
+<title>{title}</title>
+<link rel="shortcut icon" href="{Favicon}"/>
+<link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+<link rel="apple-touch-icon" href="{PortraitURL-128}"/>
+<meta name="keywords" content="Tumblr, Theme, Shane Lee"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="description" content="{MetaDescription}" />
+
+<style type="text/css">
+
+/*
+
+THEME DESIGNED BY DYLAN http://ddylanjoness.tumblr.com 
+Version:1.0
+
+*/
+
+/*
+
+
+
+
+
+
+
+*/
+
+
+/*
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ALL BROWSER RESET
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-size: 100%;
+font-family: inherit;
+vertical-align: baseline;
+}
+
+html, body {
+
+background:#fff;
+font-family:georgia, serif;
+font-size:14px;
+color:#000;
+
+}
+
+a, a:link {
+
+color:#000;
+text-decoration:underline;
+}
+
+a:hover, a:active, a:visited {
+
+color:#8c8c8c;
+text-decoration:none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+font-family:Helvetica Neue, Arial, Helvetica, sans-serif;
+color:#000;
+letter-spacing:1px;
+font-size:100%;
+}
+
+.title {
+
+padding:10px;
+border-bottom:1px solid #000;
+}
+
+.title h1 {
+
+font-family:georgia, serif;
+font-size:22px;
+}
+
+.title p {
+
+font-style:italic;
+font-size:14px;
+padding-left:7px;
+
+}
+
+.clear {
+clear: both;
+height:0px;
+overflow: hidden;
+}
+
+ol, li, ul {
+
+list-style:none; 
+}
+/* Container */
+
+#container {
+
+width:520px;
+margin:10px auto;
+border-left:1px solid #000;
+border-right:1px solid #000;
+
+}
+
+/* Description */
+
+.description {
+
+font-style:italic;
+font-size:14px;
+
+}
+
+/* NOTES */
+
+.notecount {
+
+font-size:12px;
+color:#8c8c8c;
+text-align:right;
+}
+
+.notecount a, a:visited {
+
+text-decoration:underline;
+color:#8c8c8c;
+
+}
+
+.notecount a:hover, a:active {
+
+text-decoration:none;
+color:#8c8c8c;
+}
+
+ol.notes {
+
+
+list-style:none;
+font-size:14px;
+text-align:right;
+
+
+}
+
+ol.notes li.note {
+
+border-bottom:1px #000 solid;
+padding-top:5px;
+padding-bottom:5px;
+}
+
+ol.notes li.note a {
+
+font-weight:bold;
+text-decoration:none;
+}
+
+ol.notes li.note a:hover, a:active, a:visited {
+
+font-weight:none;
+}
+
+ol.notes li.note img.avatar {
+
+position:relative;
+top: 4px;
+}
+
+ol.notes li.note span.action {
+}
+
+ol.notes li.note blockquote {
+
+margin-bottom: 0 !important; 
+}
+
+
+/* POSTS */
+
+.posts {
+
+width:520px;
+padding:10px;
+
+}
+
+/* Post Text */
+
+.posttext {
+
+border-bottom:1px solid #000; 
+padding:10px; 
+}
+
+/* Post Photo */
+
+.postphoto {
+
+border-bottom:1px solid #000;
+padding:10px;
+}
+
+.postphoto img {
+
+padding:10px auto;
+margin:10px auto;
+}
+
+.highres {
+
+font-size:11px;
+color:#8c8c8c;
+font-style:italic;
+text-align:right;
+}
+
+/* Caption */
+
+.caption {
+
+font-style:italic;
+
+}
+
+/* postphotoset */
+
+.postphotoset {
+
+border-bottom:1px solid #000;
+padding:10px;
+margin:10px auto;
+
+}
+
+/* Post Quote */
+
+.postquote {
+
+border-bottom:1px solid #000;
+padding:10px;
+font-style:italic;
+
+}
+
+/* Source */
+
+.source {
+
+font-size:12px;
+text-align:right;
+}
+
+/* Post Link */
+
+.postlink {
+
+border-bottom:1px solid #000;
+padding:10px; 
+
+}
+
+.link {
+
+
+}
+
+/* Chat Post */
+
+.postchat {
+
+border-bottom:1px solid #000;
+padding:10px;
+
+}
+
+.chat {
+
+
+
+padding:5px;
+}
+
+.label {
+
+font-style:italic;
+
+}
+
+/* Video Post */
+
+.postvideo {
+
+border-bottom:1px solid #000;
+padding:10px;
+}
+
+/* Audio Post */
+
+.postaudio {
+
+padding:10px;
+border-bottom:1px solid #000; 
+}
+
+/* Answer Posts */
+
+.answer {
+
+padding:10px;
+border-bottom:1px solid #000; 
+
+}
+
+.question {
+
+font-style:italic;
+
+}
+
+.ans {
+
+padding:15px;
+}
+
+/* Footer */
+
+#footer {
+
+padding:10px;
+
+
+}
+
+.cred {
+
+color:#8c8c8c;
+text-align:right;
+padding:10px;
+}
+
+/* Standards */
+
+.standard {
+
+text-align:right;
+font-style:italic;
+color:#8c8c8c;
+float:right;
+font-size:12px;
+margin-bottom:5px;
+padding-bottom:10px;
+
+}
+
+/* Dates */
+
+.date {
+
+text-align:right;
+font-style:italic;
+color:#000;
+font-size:12px;
+margin-top:5px;
+}
+
+/* REBLOG */
+
+.reblog {
+
+text-align:right;
+font-size:12px;
+color:#8c8c8c;
+font-style:italic;
+margin-top:2px;
+}
+
+/* Tags */
+
+.tags {
+
+display:none;
+}
+
+</style>
+</head>
+<body>
+<div id="container">
+
+<div class="title"> <h1>{Title}</h1>
+
+
+
+{block:Description}
+<p>{Description}</p>
+{/block:Description}
+</div>
+
+<ol id="posts">
+{block:Posts}
+{block:Text}
+<li class="posttext">
+{block:Title}
+<h3><a href="{Permalink}">{Title}</a></h3>
+{/block:Title}
+
+{Body}
+{block:Source}
+<div class="source">{Source}</div>
+{/block:Source}
+{block:Date}
+<div class="date"> <a href="{Permalink}">Posted: {DayOfMonthWithZero}/{ShortMonth}/{ShortYear}</a></div>
+{/block:Date}
+{block:NoteCount}
+<div class="notecount"><p>Notes: {NoteCount}</p> </div>
+{/block:NoteCount}
+{block:RebloggedFrom} 
+<div class="reblog">Reblogged from: {ReblogParentName}</div>
+{/block:RebloggedFrom}
+{block:HasTags}
+<ul class="tags">
+{block:Tags}
+<li>
+<a href="{TagURL}">{Tag}</a>
+</li>
+{/block:Tags}
+</ul>
+{/block:HasTags}
+</li>
+{/block:Text}
+
+{block:Photo}
+<li class="postphoto">
+<a href="{LinkURL}">
+<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+</a>
+{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+{block:Source}
+<div class="source">{Source}</div>
+{/block:Source}
+{block:Date}
+<div class="date"> <a href="{Permalink}">Posted: {DayOfMonthWithZero}/{ShortMonth}/{ShortYear}</a></div>
+{/block:Date}
+{block:HighRes}
+<div class="highres"><a href="{PhotoURL-HighRes}">High Res</a></div>
+{/block:HighRes}
+{block:NoteCount}
+<div class="notecount"><p>Notes: {NoteCount}</p> </div>
+{/block:NoteCount}
+{block:RebloggedFrom} 
+<div class="reblog">Reblogged from: {ReblogParentName}</div>
+{/block:RebloggedFrom}
+{block:HasTags}
+<ul class="tags">
+{block:Tags}
+<li>
+<a href="{TagURL}">{Tag}</a>
+</li>
+{/block:Tags}
+</ul>
+{/block:HasTags}
+
+</li>
+{/block:Photo}
+
+{block:Photoset}
+<li class="postphotoset">
+{Photoset-500}
+
+{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+{block:Source}
+<div class="source">{Source}</div>
+{/block:Source}
+{block:Date}
+<div class="date"> <a href="{Permalink}">Posted: {DayOfMonthWithZero}/{ShortMonth}/{ShortYear}</a></div>
+{/block:Date}
+{block:NoteCount}
+<div class="notecount"><p>Notes: {NoteCount}</p> </div>
+{/block:NoteCount}
+{block:RebloggedFrom} 
+<div class="reblog">Reblogged from: {ReblogParentName}</div>
+{/block:RebloggedFrom}
+{block:HasTags}
+<ul class="tags">
+{block:Tags}
+<li>
+<a href="{TagURL}">{Tag}</a>
+</li>
+{/block:Tags}
+</ul>
+{/block:HasTags}
+</li>
+{/block:Photoset}
+
+{block:Quote}
+<li class="postquote">
+"{Quote}"
+
+{block:Source}
+<div class="source">{Source}</div>
+{/block:Source}
+{block:Date}
+<div class="date"> <a href="{Permalink}">Posted: {DayOfMonthWithZero}/{ShortMonth}/{ShortYear}</a></div>
+{/block:Date}
+{block:NoteCount}
+<div class="notecount"><p>Notes: {NoteCount}</p> </div>
+{/block:NoteCount}
+{block:RebloggedFrom} 
+<div class="reblog">Reblogged from: {ReblogParentName}</div>
+{/block:RebloggedFrom}
+{block:HasTags}
+<ul class="tags">
+{block:Tags}
+<li>
+<a href="{TagURL}">{Tag}</a>
+</li>
+{/block:Tags}
+</ul>
+{/block:HasTags}
+</li>
+{/block:Quote}
+
+{block:Link}
+<li class="postlink">
+<a href="{URL}" class="link" {Target}>{Name}</a>
+
+{block:Description}
+<div class="description">{Description}</div>
+{/block:Description}
+{block:Source}
+<div class="source">{Source}</div>
+{/block:Source}
+{block:Date}
+<div class="date"> <a href="{Permalink}">Posted: {DayOfMonthWithZero}/{ShortMonth}/{ShortYear}</a></div>
+{/block:Date}
+{block:NoteCount}
+<div class="notecount"><p>Notes: {NoteCount}</p> </div>
+{/block:NoteCount}
+{block:RebloggedFrom} 
+<div class="reblog">Reblogged from: {ReblogParentName}</div>
+{/block:RebloggedFrom}
+{block:HasTags}
+<ul class="tags">
+{block:Tags}
+<li>
+<a href="{TagURL}">{Tag}</a>
+</li>
+{/block:Tags}
+</ul>
+{/block:HasTags}
+</li>
+{/block:Link}
+
+{block:Chat}
+<li class="postchat">
+{block:Title}
+<h3><a href="{Permalink}">{Title}</a></h3>
+{/block:Title}
+
+<ul class="chat">
+{block:Lines}
+<li class="{Alt} user_{UserNumber}">
+{block:Label}
+<span class="label">{Label}</span>
+{/block:Label}
+
+{Line}
+
+</li>
+{/block:Lines}
+{block:Date}
+<div class="date"> <a href="{Permalink}">Posted: {DayOfMonthWithZero}/{ShortMonth}/{ShortYear}</a></div>
+{/block:Date}
+{block:Source}
+<div class="source">{Source}</div>
+{/block:Source}
+{block:NoteCount}
+<div class="notecount"><p>Notes: {NoteCount}</p> </div>
+{/block:NoteCount}
+{block:RebloggedFrom} 
+<div class="reblog">Reblogged from: {ReblogParentName}</div>
+{/block:RebloggedFrom}
+{block:HasTags}
+<ul class="tags">
+{block:Tags}
+<li>
+<a href="{TagURL}">{Tag}</a>
+</li>
+{/block:Tags}
+</ul>
+{/block:HasTags}
+</ul>
+</li>
+{/block:Chat}
+
+{block:Video}
+<li class="postvideo">
+{Video-500}
+<div class="standard">Plays: {FormattedPlayCount}</div>
+{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+{block:Source}
+<div class="source">{Source}</div>
+{/block:Source}
+{block:Date}
+<div class="date"> <a href="{Permalink}">Posted: {DayOfMonthWithZero}/{ShortMonth}/{ShortYear}</a></div>
+{/block:Date}
+{block:NoteCount}
+<div class="notecount"><p>Notes: {NoteCount}</p> </div>
+{/block:NoteCount}
+{block:RebloggedFrom} 
+<div class="reblog">Reblogged from: {ReblogParentName}</div>
+{/block:RebloggedFrom}
+{block:HasTags}
+<ul class="tags">
+{block:Tags}
+<li>
+<a href="{TagURL}">{Tag}</a>
+</li>
+{/block:Tags}
+</ul>
+{/block:HasTags}
+</li>
+{/block:Video}
+
+{block:Audio}
+<li class="postaudio">
+{AudioPlayerBlack}
+
+{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+<div class="standard">Plays: {FormattedPlayCount}</div>
+{block:AlbumArt}
+<img src="{AlbumArtURL}"/>
+{/block:AlbumArt}
+{block:Source}
+<div class="source">{Source}</div>
+{/block:Source}
+{block:Date}
+<div class="date"> <a href="{Permalink}">Posted: {DayOfMonthWithZero}/{ShortMonth}/{ShortYear}</a></div>
+{/block:Date}
+{block:NoteCount}
+<div class="notecount"><p>Notes: {NoteCount}</p> </div>
+{/block:NoteCount}
+{block:RebloggedFrom} 
+<div class="reblog">Reblogged from: {ReblogParentName}</div>
+{/block:RebloggedFrom}
+{block:HasTags}
+<ul class="tags">
+{block:Tags}
+<li>
+<a href="{TagURL}">{Tag}</a>
+</li>
+{/block:Tags}
+</ul>
+{/block:HasTags}
+</li>
+{/block:Audio}
+{block:Answer}
+<li class="answer">
+<h3>{Asker}</h3>
+
+<div class="question"><p>{Question}</p></div>
+<div class="ans"><p>{Answer}</p></div>
+
+{block:Date}
+<div class="date"> <a href="{Permalink}">Posted: {DayOfMonthWithZero}/{ShortMonth}/{ShortYear}</a></div>
+{/block:Date}
+{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+{block:NoteCount}
+<div class="notecount">Notes: {NoteCount}</div>
+{/block:NoteCount}
+{block:RebloggedFrom} 
+<div class="reblog">Reblogged from: {ReblogParentName}</div>
+{/block:RebloggedFrom}
+{block:HasTags}
+<ul class="tags">
+{block:Tags}
+<li>
+<a href="{TagURL}">{Tag}</a>
+</li>
+{/block:Tags}
+</ul>
+{/block:HasTags}
+</li>
+{/block:Answer}
+
+{/block:Posts}
+{CustomCSS}
+
+
+<ol class="notes">
+<li class="note">
+
+{PostNotes}
+</li>
+</ol>
+
+</ol>
+
+<p id="footer">
+{block:PreviousPage}
+<a href="{PreviousPage}">&#171; Previous</a>
+{/block:PreviousPage}
+
+{block:NextPage}
+<a href="{NextPage}">Next &#187;</a>
+{/block:NextPage}
+
+<a href="/archive">Archive</a>
+<ul class="cred">
+<p><small><small><small><a href="http://ddylanjoness.tumblr.com">Theme</a> | <a href="http://ddthemes.tumblr.com">dd</a> | <a href="http://tumblr.com">Tumblr</a></small></small></small></p>
+</ul>
+</p>
+</div>
+</body>
+</html>
