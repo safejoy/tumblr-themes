@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-
+
+transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="image:Header" content=""/>
+<meta name="font:Body" content="Times New Roman", Times, serif"/>
+<meta name="color:Font" content="#000"/>
+<meta name="color:Background" content="#fff"/>
+<meta name="if:Endless Scrolling" content="0" />
+
+
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}" />
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+<style type="text/css">
+<!--
+body {
+font-family: {font:Body};
+font-size: 12px;
+background: {color:Background};
+margin: 0;
+padding: 0;
+color: {color:Font};
+}
+
+ul, ol, dl {
+padding: 0;
+margin: 0;
+list-style-type: none;
+}
+
+a img {
+border: none;
+}
+
+img:hover {
+background: none;
+}
+
+a {
+color: #000;
+text-decoration: none;
+}
+
+a:hover {
+color: #666;
+text-decoration: none;
+}
+.container {
+width: 1190px;
+margin: auto;
+margin-top: 30px;
+}
+.header {
+margin: 0 20px 0 20px;
+max-width: 980px;
+}
+.content {
+width: 980px;
+float: right;
+}
+.sidebar {
+float: left;
+width: 150px;
+margin: 20px;
+}
+.page {
+margin: 20px;
+}
+.perma {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 10px;
+text-transform: uppercase;
+text-align: right;
+clear: both;
+padding: 5px 0;
+}
+.des {
+text-align: center;
+clear: both;
+padding: 5px 0;
+}
+.post {
+float: left;
+width: 450px;
+margin: 20px;
+}
+.text {
+}
+.title {
+font-size: 18px;
+font-style: italic;
+margin-bottom: 2px;
+}
+.quote {
+font-size: 16px;
+font-style: italic;
+}
+.link {
+font-size: 18px;
+font-style: none;
+}
+.ask {
+background: #eee;
+padding: 2px 4px;
+margin-bottom: 2px;
+}
+.chat {
+background: #eee;
+padding: 2px 4px;
+}
+.audio {
+width: 450px;
+height: 27px;
+background: #000;
+}
+.video {
+width: 450px;
+background: #eee;
+text-align: center;
+}
+.nav {
+padding: 0;
+font-size: 16px;
+clear: both;
+margin: 10px 0 0 0;
+}
+.nav a {
+text-decoration: none;
+color: #000;
+}
+.nav a:hover {
+text-decoration: none;
+color: #000;
+text-decoration: underline;
+}
+.bn {
+font-size: 12px;
+font-style: italic;
+margin: 20px 0 0 0;
+}
+.credit {
+position: fixed;
+bottom: 0;
+left: 0;
+background: #fff;
+font-size: 11px;
+font-style: italic;
+text-transform: lowercase;
+margin: 0 0 3px 7px;
+}
+.credit a {
+text-decoration: none;
+}
+.credit a:hover {
+text-decoration: none;
+}
+::-webkit-scrollbar-thumb:vertical { 
+
+background-color:#3A3A3A;
+
+height:100px;
+
+}
+
+::-webkit-scrollbar-thumb:horizontal { 
+
+background-color:#888;
+
+height:10px !important;
+
+}
+
+::-webkit-scrollbar { 
+
+height:10px;
+
+width:6px; 
+
+background-color:#fff;
+
+}
+
+height: 20px; 
+border-radius:5px;
+background-color: #cccccc; 
+/* here you should change the color */ 
+-webkit-box-shadow: 0 1px 1px rgba(255,255,255,0.9); 
+} 
+::-webkit-scrollbar-track:enabled { 
+background-color: transparent; 
+} 
+::-webkit-scrollbar-track-piece { 
+background-color: transparent; 
+border: none; 
+margin: 0px 0 0px 10px; 
+/* here you should change the margins to fit your needs */ 
+-->
+</style>
+
+{block:IfEndlessScrolling}<script type="text/javascript" src="http://static.tumblr.com/q0etgkr/J5bl3lkz1/tumblrautopagernopage.js"></script>{/block:IfEndlessScrolling}
+
+<script type="text/javascript" src="http://static.tumblr.com/imovwvl/dJWl20ley/jqueryformasonry.js"></script> 
+<script type="text/javascript" src="http://static.tumblr.com/imovwvl/rSGl20lfv/masonry.js"></script> 
+<script type="text/javascript">
+
+$(window).load(function() {
+
+$('.content').masonry();
+
+});
+
+</script>
+
+</head>
+<body>
+
+
+
+<div class="container">
+
+
+<div class="header">
+<a href="/"><img src="{image:Header}" alt="{Title}" border="0" /></a>
+</div>
+
+<div class="sidebar">
+{Description}
+
+<div class="nav">
+<a href="/">home</a>
+
+{block:AskEnabled}<a href="/ask">ask</a>{/block:AskEnabled}<br />
+<a href="/archive">archive</a><br />
+<a href="{RSS}">rss</a><br />
+{block:HasPages}{block:Pages}<a href="{URL}">{Label} </a>{/block:Pages}
+{/block:HasPages}
+<p><small><small><small><a href="http://greattideflow.tumblr.com">Theme</a> | <a href="http://ddthemes.tumblr.com">dd</a> | <a href="http://tumblr.com">Tumblr</a></small></small></small></p>
+</div>
+<div class="bn">
+{block:NextPage}<a href="{NextPage}">back</a>{/block:NextPage} ~ {block:PreviousPage}<a href="{PreviousPage}">next</a>{/block:PreviousPage}
+</div>
+</div>
+
+
+<div class="content">
+{block:IfEndlessScrolling}<div class = "autopagerize_page_element">{/block:IfEndlessScrolling}
+{block:Posts}
+
+{block:IndexPage}
+
+{block:Text}
+<div class="post">
+<div class="text">
+{block:Title}<div class="title"><a href="{Permalink}">{Title}</a></div>{/block:Title}
+{Body}
+</div>
+<div class="perma">
+<a href="{ReblogURL}" target="_blank">Reblog</a> † <a href="{Permalink}">Permalink</a> {block:NoteCount}† <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}
+</div>
+</div>
+{/block:Text}
+
+
+{block:Photo}
+<div class="post">
+<a href="{Permalink}"><img src="{PhotoURL-400}" alt="{PhotoAlt}" border="0" style="width: 100%" /></a>
+<div class="perma">
+<a href="{ReblogURL}" target="_blank">Reblog</a> † <a href="{Permalink}">Permalink</a> {block:NoteCount}† <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}
+</div>
+</div>
+{/block:Photo}
+
+
+{block:Quote}
+<div class="post">
+<div class="quote">
+{Quote}
+</div>
+{block:Source}<div class="text">- {Source}</div>{/block:Source}
+<div class="perma">
+<a href="{ReblogURL}" target="_blank">Reblog</a> † <a href="{Permalink}">Permalink</a> {block:NoteCount}† <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}
+</div>
+</div>
+{/block:Quote}
+
+
+{block:Link}
+<div class="post">
+<div class="link">
+<a href="{URL}" target="_blank">{Name}<b> ?</b></a>
+</div>
+{Block:Description}
+<div class="text">
+{Description}
+</div>
+{/block:Description}
+<div class="perma">
+<a href="{ReblogURL}" target="_blank">Reblog</a> † <a href="{Permalink}">Permalink</a> {block:NoteCount}† <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}
+</div>
+</div>
+{/block:Link}
+
+
+{block:Chat}
+<div class="post">
+<div class="text">
+{block:Title}<div class="title"><a href="{Permalink}">{Title}</a></div>{/block:Title}
+</div>
+{block:Lines}
+<div class="chat">
+{block:Label}<strong>{Label}</strong>{/block:Label}: {Line}
+</div>
+{/block:Lines}
+<div class="perma">
+<a href="{ReblogURL}" target="_blank">Reblog</a> † <a href="{Permalink}">Permalink</a> {block:NoteCount}† <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}
+</div>
+</div>
+{/block:Chat}
+
+
+{block:Video}
+<div class="post">
+<div class="video">{Video-400}</div>
+{block:Caption}
+<div class="text">
+{Caption}
+</div>
+{/block:Caption}
+<div class="perma">
+<a href="{ReblogURL}" target="_blank">Reblog</a> † <a href="{Permalink}">Permalink</a> {block:NoteCount}† <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}
+</div>
+</div>
+{/block:Video}
+
+
+{block:Audio}
+<div class="post">
+<div class="audio">{AudioPlayerBlack}</div>
+<div class="text">
+<center>{block:Artist}<strong>{Artist}</strong>{/block:Artist} - {block:TrackName}{TrackName}{/block:TrackName}</center><br />
+{block:Caption}{Caption}{/block:Caption}
+</div>
+<div class="perma">
+<a href="{ReblogURL}" target="_blank">Reblog</a> † <a href="{Permalink}">Permalink</a> {block:NoteCount}† <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}
+</div>
+</div>
+{/block:Audio}
+
+
+{block:Answer}
+<div class="post">
+<div class="ask">
+{Asker}: {Question}
+</div>
+<div class="text">
+{Answer}
+</div>
+<div class="perma">
+<a href="{ReblogURL}" target="_blank">Reblog</a> † <a href="{Permalink}">Permalink</a> {block:NoteCount}† <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}
+</div>
+</div>
+{/block:Answer}
+
+{/block:IndexPage}
+
+
+
+{block:PermalinkPage}
+
+{block:Text}
+<div class="page">
+{block:Title}<div class="title">{Title}</div>{/block:Title}
+{Body}
+{block:PostNotes}<div class="text">{PostNotes}</div>{/block:PostNotes}
+</div>
+{/block:Text}
+
+
+{block:Photo}
+<div class="page">
+{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" border="0" />{LinkCloseTag}
+{block:Caption}{Caption}{/block:Caption}<br />
+{block:PostNotes}<div class="text">{PostNotes}</div>{/block:PostNotes}
+</div>
+{/block:Photo}
+
+
+{block:Quote}
+<div class="page">
+<div class="quote">"{Quote}" </div>
+{block:Source}- {Source}{/block:Source}
+{block:PostNotes}<div class="text">{PostNotes}</div>{/block:PostNotes}
+</div>
+{/block:Quote}
+
+
+{block:Link}
+<div class="page">
+<div class="link"><a href="{URL}" target="_blank">{Name}<b> ?</b></a></div>
+{Block:Description}{Description}{/block:Description}
+{block:PostNotes}<div class="text">{PostNotes}</div>{/block:PostNotes}
+</div>
+{/block:Link}
+
+
+{block:Chat}
+<div class="page">
+{block:Title}<div class="title">{Title}</div>{/block:Title}
+{block:Lines}
+<div class="chat">
+{block:Label}<strong>{Label}</strong>{/block:Label}
+{Line}
+</div>
+{/block:Lines}
+{block:PostNotes}<div class="text">{PostNotes}</div>{/block:PostNotes}
+</div>
+{/block:Chat}
+
+
+{block:Video}
+<div class="page">
+<div class="video">{Video-500}</div>
+{block:Caption}{Caption}{/block:Caption}
+{block:PostNotes}<div class="text">{PostNotes}</div>{/block:PostNotes}
+</div>
+{/block:Video}
+
+
+{block:Audio}
+<div class="page">
+<div class="audio">{AudioPlayerBlack}</div>
+<br /><center>{block:Artist}<strong>{Artist}</strong>{/block:Artist} - {block:TrackName}{TrackName}{/block:TrackName}</center>
+{block:Caption}{Caption}{/block:Caption}
+{block:PostNotes}<div class="text">{PostNotes}</div>{/block:PostNotes}
+</div>
+{/block:Audio}
+
+
+{block:Answer}
+<div class="page">
+<strong>{Asker}: {Question}</strong>
+{Answer}
+{block:PostNotes}<div class="text">{PostNotes}</div>{/block:PostNotes}
+</div>
+{/block:Answer}
+
+{/block:PermalinkPage}
+
+{/block:Posts}
+</div>
+</div>
+{block:IfNotEndlessScrolling}
+<div style="margin:auto; font-size:14px; width:550px; background-color:{color:background}; padding-right:10px; padding-left:10px;"><div class="right">{block:PreviousPage}<a href="{PreviousPage}" title="newer entries">&laquo;</a>{/block:PreviousPage} <div class="totalright">{block:NextPage}<a href="{NextPage}" title="older entries">&raquo;</a>{/block:NextPage}</div></div></span
+{/block:IfNotEndlessScrolling}
+
+{block:IfEndlessScrolling}</div>{/block:IfEndlessScrolling}
+
+
+</div>
+</body>
+<div id="ads"><div class="inner">
+</div></div>
+</html>
