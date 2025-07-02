@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+"http://www.w3.org/TR/html4/strict.dtd"> 
+
+
+
+<!--	
+
+
+
+Moving by ddylanjoness
+
+
+--> 
+
+
+<html lang="en"> 
+<head> 
+
+
+<meta name="if:Sidebar Image" content="0"/> 
+<meta name="if:Archive" content="1"/> 
+<meta name="if:Description" content="1"/>
+<meta name="if:Endless Scrolling" content="0"/> 
+<meta name="if:Caption" content="1"/> 
+<meta name="if:Fade Images" content="0"/> 
+<meta name="if:Picture Shadows" content="0" />
+
+
+<meta name="color:Background" content="#FFFFFF"/> 
+<meta name="color:Title" content="#000000"/> 
+<meta name="color:Post title" content="#000000"/> 
+<meta name="color:Text" content="#000000"/> 
+<meta name="color:Post Shadow" content="#D1D1D1"/> 
+<meta name="color:Chat" content="#F5F5F5"/>
+<meta name="color:Link" content="#363636"/> 
+<meta name="color:Hover" content="#000000"/> 
+<meta name="color:Nav background" content="#F1F1F1"/>
+<meta name="color:Nav font" content="#000000"/>
+
+<meta name="font:Title" content="arial"/> 
+<meta name="font:Post title" content="arial"/>
+<meta name="font:Body" content="arial"/>
+
+<meta name="text:Title font size" content="24"/> 
+<meta name="text:Post title font size" content="20"/> 
+<meta name="text:Font Size" content="11"/>
+
+<meta name="image:Background" content=""/> 
+<meta name="image:Sidebar" content=""/> 
+
+
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description} 
+<title>{block:SearchPage}Search results for "{SearchQuery}" - {/block:SearchPage}{block:PostSummary} 
+
+{PostSummary} - {/block:PostSummary}{Title}</title> 
+
+
+<style type="text/css"> 
+
+
+iframe#tumblr_controls{
+top: 1px !important;
+margin: 0 0 0 0;
+right: 6px !important;
+position: fixed !important;
+}
+
+#header {
+width:770px;
+padding:20px 0;
+margin:0 0 35px 0;
+border-bottom:1px solid #ccc;
+}
+.box {
+position:relative;
+width:770px;
+border-top:1px solid #ccc;
+margin-top:20px;
+padding:20px 0;
+float:left;
+}
+.blogtitle {
+text-shadow:4px 5px 0px rgba(0,0,0,0.1),4px -6px 0px rgba(0,0,0,0.2),6px 12px 0px rgba(0,0,0,0.1),-8px 5px 0px rgba(0,0,0,0.2),-3px -8px 0px rgba(0,0,0,0.15);-webkit-transition: all 0.2s ease-out;-moz-transition: all 0.2s ease-out;-o-transition: all 0.2s ease-out;
+text-transform:uppercase;
+font-weight:normal;
+font-size:25px;
+}
+.blogtitle a:hover {
+text-shadow:0px 0px 7px rgba(9,9,9,9.9);-webkit-transition: all 0.4s ease-out;-moz-transition: all 0.4s ease-out;-o-transition: all 0.4s ease-out;
+}
+
+::-webkit-scrollbar-thumb:vertical { 
+
+background-color:#3A3A3A;
+
+height:100px;
+
+}
+
+::-webkit-scrollbar-thumb:horizontal { 
+
+background-color:#888;
+
+height:10px !important;
+
+}
+
+::-webkit-scrollbar { 
+
+height:10px;
+
+width:6px; 
+
+background-color:#fff;
+
+}
+
+body { 
+margin:0px; 
+background-color: {color:Background}; 
+background-image:url({image:Background});
+background-attachment: fixed; 
+font-size:{text:font size}px; 
+font-family:{font:Body}; 
+line-height:16px; 
+color:{color:Text}; 
+} 
+
+a:link, a:active, a:visited{ 
+color: {color:Link}; 
+text-decoration: none; 
+-webkit-transition: 0.3s ease-in;
+} 
+
+a:hover { 
+color:{color:Hover}; 
+text-decoration: none; 
+-webkit-transition: 0.3s ease-in;
+} 
+
+.nav{ 
+display:inline-block; 
+font-size:10px; 
+font-family:{font:body}; 
+text-transform: uppercase; 
+padding:4px;
+width:88px;
+margin-bottom:5px;
+margin-left:2px;
+} 
+
+a.nav{
+background-color:{color:Nav background};
+color:{color:Nav font};
+}
+
+a.nav:hover{
+background-color:{color:Nav font};
+color:{color:Nav background};
+}
+
+div#content{ 
+width:500px; 
+margin-left:300px;
+margin-top:20px;
+} 
+
+div#sidebar{ 
+position:fixed; 
+width:200px; 
+margin-left:840px; 
+} 
+
+.info{
+text-align:right;
+margin:-10px 0px 10px 0px;
+padding-bottom:10px;
+border-bottom:2px solid {color:Title};
+}
+
+.title{ 
+display:block;
+font-family:{font:title}; 
+font-size: {text:title font size}px; 
+line-height:30px; 
+color: {color:Title}; 
+text-transform: uppercase; 
+padding-bottom:5px;
+border-bottom:2px solid {color:Title};
+} 
+
+.post_title{ 
+font-family:{font:Post title}; 
+font-size:{text:Post title font size}px; 
+line-height:23px; 
+color:{color:Post title}; 
+} 
+
+blockquote{ 
+padding:0px 0px 2px 5px; 
+margin:0px 0px 2px 1px; 
+border-left: 2px solid {color:Text}; 
+} 
+
+.entry{ 
+margin-bottom:10px;
+padding-bottom:10px;
+box-shadow: 0 3px 4px -2px {color:Post Shadow};
+-moz-box-shadow: 0 3px 4px -2px {color:Post Shadow};
+-webkit-box-shadow: 0 3px 4px -2px {color:Post Shadow};
+}
+
+{block:IfFadeImages}
+.entry img{-webkit-transition: 0.3s ease-in;}
+.entry img:hover{-webkit-transition: 0.3s ease-in; opacity 0.5s linear; opacity: 0.87;} 
+{/block:IfFadeImages}
+
+.permalink {
+position: absolute;
+margin-left:-100px;
+text-align: right;
+width: 80px;
+height:jusitfy;
+opacity:0;
+-webkit-transition: 0.3s ease-in;
+background-color:{color:Post background};
+}
+
+.lalala{
+background-color:#E4E4E4;
+height:27px;
+width:500px;
+-webkit-box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+-moz-box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+#chat ul{
+list-style: none;
+padding: 0px;
+margin-top:5px;
+margin-bottom:10px;
+width: 500px;
+text-align: left;
+}
+
+#chat li {
+padding: 4px;
+background-color:{color:Chat};
+margin-top: 2px; 
+}
+
+.asker{
+padding:7px;
+line-height:16px;
+background-color:{color:Chat};
+}
+
+.q{
+margin-left:20px;
+padding-top:12px;
+font-family:{font:Post Title}; 
+font-size:{text:post title font size}px;
+color:{color:post title}; 
+line-height:23px; 
+}
+
+.quote{
+position:absolute;
+margin-left:0px;
+margin-top:20px;
+font-size:60px;
+opacity:0.3;
+filter: alpha(opacity = 30);
+}
+
+.source{
+font-size:12px;
+margin-left:35px;
+}
+
+.page{
+display:block;
+text-align:right;
+font-family:arial;
+font-size:14px;
+padding-bottom:10px;
+{block:IfEndlessScrolling}display:none;{/block:IfEndlessScrolling}
+}
+
+ol.notes {
+padding: 0px;
+margin: 25px 0px;
+list-style-type: none;
+border-bottom: solid 1px {color:text};
+font-size:10px;
+}
+
+ol.notes li.note {
+border-top: solid 1px {color:text};
+padding: 10px;
+font-size:10px;
+}
+
+ol.notes li.note img.avatar {
+vertical-align: -4px;
+margin-right: 10px;
+width: 16px;
+height: 16px;
+}
+
+ol.notes li.note span.action {
+font-weight: normal;
+font-size:10px;
+}
+
+ol.notes li.note .answer_content {
+font-weight: normal;
+font-size:10px;
+}
+
+ol.notes li.note blockquote {
+border-color: {color:text};
+padding: 4px 10px;
+margin: 10px 0px 0px 25px;
+font-size:10px;
+}
+
+ol.notes li.note blockquote a {
+text-decoration: none;
+font-size:10px;
+}
+
+.tumblrAutoPager_page_info, .tumblrAutoPager_page_separator {display:none;}
+
+
+{CustomCSS} 
+</style> 
+<link rel="shortcut icon" href="{Favicon}"> 
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" /> 
+<meta name="viewport" content="width=820" /> 
+</head> 
+<body> 
+
+
+<div id="sidebar"> 
+<center><div class="blogtitle"><a href="/">{Title}</a></div></center>
+<div style="border-bottom:1px solid {color:text}"></div><br>
+{block:ifsidebarimage}<img src="{image:sidebar}" style="margin:15px 0px 10px 0px;" width="200">
+{/block:ifsidebarimage}
+{block:IfDescription}<div class="info">{Description}</div>{/block:IfDescription}
+<a href="/" class="nav">HOME</A> 
+{block:AskEnabled}<a href="/ask"class="nav">MESSAGE</a>{/block:AskEnabled} 
+{block:IfArchive}<a href="/archive" class="nav">ARCHIVE</a>{/block:IfArchive} 
+{block:HasPages}{block:Pages}<a href="{URL}" class="nav">{Label}</A> {/block:Pages}{/block:HasPages}
+{block:SubmissionsEnabled}<a href="/submit"class="nav">{SubmitLabel}</a>{/block:SubmissionsEnabled}
+</div> 
+
+
+<div id="content"> 
+
+{block:IfEndlessScrolling}<script type="text/javascript" src="http://static.tumblr.com/q0etgkr/J5bl3lkz1/tumblrautopagernopage.js";;></script> 
+<Div class="autopagerize_page_element"></div>{/block:IfEndlessScrolling}
+
+{block:Posts} 
+{block:Date}<div id="date"><a href="{Permalink}" title="{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}">{DayOfWeek}, {Month} {DayOfMonth}, {Year}</a></div>{/block:Date}
+
+{block:Text} 
+<div class="entry">
+<span class="permalink"><a href="{Permalink}"><img src="{image:Permalink}" width="30"></a></span>
+{block:Title}<span class="post_title">{Title}</span>{/block:Title} 
+{Body}</div>
+{/block:Text} 
+
+{block:Photo} 
+<div class="entry">
+<span class="permalink"><a href="{Permalink}"><img src="{image:Permalink}" width=30px></a></span>
+{LinkOpenTag}<img src=" {PhotoURL-500}" alt="{PhotoAlt}" width="500">{LinkCloseTag}
+{block:ifPictureShadows}<div class="blur"><img src="http://static.tumblr.com/hporrzy/QZalqo63o/dark.png" /></div>{block:ifPictureShadows} 
+{block:IfCaption}{block:Caption}{Caption}{/block:Caption}{/block:IfCaption}</div>
+{/block:Photo} 
+
+{block:Photoset}
+<div class="entry">
+<span class="permalink"><a href="{Permalink}"><img src="{image:Permalink}" width=30px></a></span>
+{Photoset-500}
+{block:IndexPage}{block:Caption}{Caption}{/block:Caption}{/block:IndexPage}
+</div>
+{/block:Photoset}
+
+{block:Quote}
+<div class="entry">
+<span class="permalink"><a href="{Permalink}"><img src="{image:Permalink}" width=30px></a></span>
+<span class="quote">"</span><div class="q">{Quote}</div>
+{block:Source}<div class="source"><p>&#8212; {Source}</p></div>{/block:Source}</div>
+{/block:Quote}
+
+{block:Link} 
+<div class="entry">
+<span class="permalink"><a href="{Permalink}"><img src="{image:Permalink}" width=30px></a></span>
+<a href="{URL}" class="post_title">{Name}</a> 
+{block:Description}{Description}{/block:Description}</div>
+{block:Link} 
+
+{block:Chat}
+<div class="entry">
+<span class="permalink"><a href="{Permalink}"><img src="{image:Permalink}" width=30px></a></span>
+{block:Title}<span class="post_title">{Title}</span>{/block:Title}
+<div id="chat">
+<ul>{block:Lines}<li>
+{block:Label}<b>{Label}</b>{/block:Label}
+{Line}
+</li>{/block:Lines}</ul>
+</div></div>
+{/block:Chat}
+
+{block:Audio} 
+<div class="entry">
+<span class="permalink"><a href="{Permalink}"><img src="{image:Permalink}" width=30px></a></span>
+<div class="lalala">{AudioPlayerGrey}</div> 
+{block:Caption}{Caption}
+<small>{PlayCount} plays</small> {/block:Caption} 
+</div>
+{/block:Audio} 
+
+{block:Video}
+<div class="entry">
+<span class="permalink"><a href="{Permalink}"><img src="{image:Permalink}" width=30px></a></span>
+{Video-500}
+{block:Caption}{Caption}{/block:Caption}</div>
+{block:Video} 
+
+{block:Answer} 
+<div class="entry">
+<span class="permalink"><a href="{Permalink}"><img src="{image:Permalink}" width=30px></a></span>
+<div class="asker">{Asker}: {Question}</div>
+{Answer}</div>
+{/block:Answer}
+
+{block:PostNotes} 
+<center> 
+{block:NoteCount}{NoteCountWithLabel}<br>{/block:NoteCount} 
+
+{block:HasTags} 
+tagged as: {block:Tags}<a href="{TagURL}">{Tag}. </a>{/block:Tags}<br> {/block:HasTags} 
+{block:RebloggedFrom} 
+reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a><br> 
+originally posted by <a href="{ReblogRootURL}">{ReblogRootName}</a> {/block:RebloggedFrom} 
+</center></span> 
+<br> 
+<div id="postnotes">{PostNotes}</div><br> 
+
+<center>{block:ContentSource} 
+<br><a href="{SourceURL}"> 
+{lang:Source}: 
+{block:SourceLogo} 
+<img src="{BlackLogoURL}" width="{LogoWidth}" 
+height="{LogoHeight}" alt="{SourceTitle}" /> 
+{/block:SourceLogo} 
+{block:NoSourceLogo} 
+{SourceLink} 
+{/block:NoSourceLogo} 
+</a> 
+{/block:ContentSource}</center> 
+
+{/block:PostNotes} 
+
+{/block:Posts} 
+
+{block:Pagination}<div class="page">{block:PreviousPage}<a href="{PreviousPage}">&laquo; / </a>{/block:PreviousPage}{block:nextPage}<a href="{nextPage}">&raquo;</a>{/block:nextPage}</div>{/block:Pagination}
+
+</div>
+
+
+<div style="position:fixed; bottom:3px; right:3px; font-size:10px; letter-spacing:0px; opacity:.6; background-color:{color:link hover};"><a href="http://ddylanjoness.tumblr.om">theme</a></div>
+</body> 
+</html>
