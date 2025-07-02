@@ -1,0 +1,878 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!---
+    
+a better theory by mason-jars (ddylanjoness)
+--->
+
+<title>{Title}</title>
+
+<meta name="color:Background" content="#ffffff" />
+<meta name="image:Background" content="" />
+
+<meta name="color:Text" content="#000000" />
+<meta name="color:Hover" content="#ffffff" />
+
+<meta name="color:Blog Title" content="#000000" />
+<meta name="color:Header Links" content="#000000" />
+
+<meta name="if:Show Caption" content="0" />
+<meta name="if:Show Archive" content="1" />
+<meta name="if:Show RSS" content="1" />
+
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+<link rel="shortcut icon" href="{Favicon}" />
+<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ruda' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+
+body
+{
+    letter-spacing:1px;
+    font-size: 9px;
+    font-family: 'Ruda', sans-serif;
+    line-height: 15px;
+    color:{color:Text};
+    background-color: {color:Background};
+    background-image:url('{image:Background}');
+}
+
+a
+{
+    color:{color:Text};
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration:none;
+    -webkit-transition: all 0.3 ease-out;
+    -moz-transition: all 0.3 ease-out;
+}
+
+.blogtitle
+{   
+    padding: 2px 0;
+    font-family: ubuntu mono;
+    font-size: 11px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: {color:Blog Title};
+    letter-spacing: 2px;
+}
+
+.blogtitle:hover
+{
+    text-decoration:none;
+    background-color: transparent;
+    cursor: help;
+}
+
+.links
+{
+    font-family: ubuntu mono;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align:center;
+}
+
+.spacing
+{
+    padding: 3px 0;
+}
+
+.links a
+{
+    padding: 2px 0;
+    text-decoration: none;
+    color:{color:Header Links};
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+}
+
+.links a:hover
+{
+    padding: 2px 0;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    text-decoration:none;
+    border-bottom: 1px solid {color:Hover};
+}
+
+
+.descriptbox
+{
+    margin: auto;
+    width: 400px;
+}
+
+.description
+{
+    margin: 2px 3px;
+    text-align: center;
+    text-transform: lowercase;
+    font-size: 10px;
+}
+
+.tumblrAutoPager_page_info, .tumblrAutoPager_page_separator
+{
+    display:none;
+}
+
+.bodie
+{
+    margin: auto;
+    height: 100%;
+    background-color: transparent;
+    {block:IndexPage}
+    max-width:690px;
+    {/block:IndexPage}
+    {block:PermalinkPage}
+    max-width:400px;
+    {/block:PermalinkPage}
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Entry Markup */
+
+.entry
+{
+    float: left;
+    position: relative;
+    {block:IndexPage}
+    width:200px;
+    margin: 15px;
+    {/block:IndexPage}
+    {block:PermalinkPage}
+    width:400px;
+    margin: 20px 0;
+    {/block:PermalinkPage}
+}
+
+.entry img
+{
+    {block:Indexpage}
+    width:200px;
+    {/block:Indexpage}
+    {block:PermalinkPage}
+    width:400px;
+    {/block:PermalinkPage}
+}
+
+.entrytitle
+{
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.entrytitle a
+{
+    padding: 1px 0;
+    border-bottom: 1px solid {color:Text};
+}
+
+.entrytitle a:hover,
+.entrybody a:hover,
+.quotesource a:hover
+{
+    text-decoration: none;
+    padding: 1px 0;
+    border-bottom: 1px solid {color:Hover};
+}
+
+.entrybody
+{
+    text-align:justify;
+}
+
+.entrybody a
+{
+    font-style: italic;
+    text-decoration: none;
+    padding: 2px 0;
+}
+
+.quoteentry
+{
+    text-align: left;
+    font-style: italic;
+}
+
+.quotesource
+{
+    text-align: right;
+}
+
+.quotesource a
+{
+    font-style: italic;
+    padding: 2px 0;
+}
+
+.photobox
+{
+    position: relative;
+    overflow: hidden;
+}
+
+.photoset 
+{
+    {block:Indexpage}
+    max-width: 250px !important;
+    margin-left: -25px;
+    {/block:Indexpage}
+    {block:PermalinkPage}
+    max-width: 400px !important;
+    {/block:PermalinkPage}
+}
+
+/* End Entry Markup */
+
+/* Header Markup */
+
+.head
+{
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 8px 0;
+    position: fixed;
+    z-index:1;
+    text-align: center;
+    background-color: #fff;
+    opacity: 0.7;
+    margin: auto;
+}
+
+/* End Header Markup */
+
+.audio1
+{    
+    {block:IndexPage}
+    width:200px;
+    {/block:IndexPage}
+    {block:PermalinkPage}
+    width:400px;
+    {/block:PermalinkPage}
+    background-color:#fff;
+    overflow: hidden;
+}
+
+.video
+{
+    {block:IndexPage}
+    width: 250px;
+    margin-left: -25px;
+    {/block:IndexPage}
+    {block:PermalinkPage}
+    width: 400px;
+    {/block:PermalinkPage}
+}
+
+.videobox
+{
+    position: relative;
+    overflow: hidden;
+}
+
+.perma
+{
+    font-family: 'Ubuntu Mono', sans serif;
+    font-size: 11px;
+    text-align: right;
+    margin-top: 2px;
+    opacity: 0;
+    color: {color:Text};
+}
+
+.entry:hover .perma
+{
+    opacity: 0.8;
+}
+
+.perma a
+{
+    padding: 2px 0;
+    color:{color:Text};
+}
+
+.perma a:hover
+{
+    padding: 2px 0;
+    border-bottom: 1px solid {color:Hover};
+}
+
+/* Notes Markup */
+
+ol.notes
+{
+    margin-top:20px;
+    margin-bottom: 10px;
+    list-style-type: none;
+    text-align: left;
+}
+
+ol.notes i.note
+{
+    text-align:left;
+    border-top: solid 0px #ccc;
+    padding: 0 0 3px 0;
+}
+
+ol.notes li.note span.action
+{
+    font-weight: normal;
+    text-align:left;
+}
+
+ol.notes li.note span.action a
+{
+    font-weight: normal;
+    text-align: left;
+    padding: 2px 0;
+}
+
+ol.notes li.note span.action a:hover
+{
+    text-decoration: none;
+    border-bottom: 1px solid {color:Hover};
+}
+
+ol.notes li.note img.avatar
+{
+    vertical-align: -4px;
+    margin-right: 20px;
+    width: 16px;
+    height: 16px;
+}
+
+li.note.more_notes_link_container
+{
+    padding-top: 30px;
+}
+
+/* End Notes Markup */
+
+/* Pagination Markup */
+
+#infscr-loading
+{
+    z-index: 5;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    bottom: 30px;
+    right: 30px;
+}
+
+.navigation
+{
+    display:none;
+}
+
+/* End Pagination Markup */
+
+/*ScrollBar*/
+
+::-webkit-scrollbar-thumb:vertical 
+{ 
+background-color: #000;
+}
+
+::-webkit-scrollbar-thumb:horizontal 
+{ 
+background-color: #fff;
+height:3px !important;
+}
+
+::-webkit-scrollbar
+{
+height:3px;
+width:5px; 
+background-color: #fff;
+}
+
+/*End ScrollBar*/
+
+/*Photo Setup*/
+
+.photoperma, .photosetperma
+{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding: 5px 0;
+    opacity: 0;
+    background-color: #fff;
+    color: #000;
+    filter:alpha(opacity=0);
+    font-family: 'Ubuntu Mono', sans serif;
+    font-size: 11px;
+}
+
+.entry:hover .photoperma
+{
+    opacity:0.7;
+}
+
+.photoperma a
+{
+    color:#000;
+}
+
+.kanan
+{
+    float: right;
+    padding-right: 5px;
+}
+
+.kaliwa
+{
+    padding-left: 5px;
+}
+
+.entry:hover .photosetperma
+{
+    opacity:0.7;
+}
+
+.photosetperma a
+{
+    color: #000;
+}
+
+/*End Photo Setup*/
+
+/*Audio Customization*/
+
+.track
+{
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    {block:IndexPage}
+    margin-top: 80px;
+    {/block:IndexPage}
+    {block:PermalinkPage}
+    margin-top: 280px;
+    {/block:PermalinkPage}
+    opacity: 0;
+    z-index: 1;
+}
+
+.trackbg
+{
+    background-color: #000;
+    color: #fff;
+    padding: 3px 3px;
+    opacity: 0.85;
+}
+
+.entry:hover .track
+{
+    opacity: 0.85;
+    margin-left: 0px;
+}
+
+/*End Audio Customization*/
+
+{CustomCSS}
+
+</style>
+
+<script type='text/javascript' src='http://static.tumblr.com/ey3fqkk/VREm21dry/jqueryv1.3.2.js'></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$(".description").hide();
+$(".blogtitle").click(function(){
+$('span.description').slideToggle(300);
+return true;
+});
+});
+</script>
+
+<!-- {block:IndexPage} -->
+
+<script src="http://static.tumblr.com/ey3fqkk/Sv0m21dtk/masonryv2.1.03.js"></script>
+<script src="http://static.tumblr.com/ey3fqkk/Jhim21dt4/infinitescroll.js"></script>
+
+<script type="text/javascript">
+  $(function(){
+    
+    var $container = $('.bodie');
+    
+    $container.imagesLoaded(function(){
+      $container.masonry({
+        itemSelector: '.entry',
+      });
+    });
+    
+    $container.infinitescroll({
+      navSelector  : 'div.navigation',    // selector for the paged navigation 
+      nextSelector : '.navigation a.next',  // selector for the NEXT link (to page 2)
+      itemSelector : '.entry',     // selector for all items you'll retrieve
+      loadingImg : "http://static.tumblr.com/ey3fqkk/wQJm10e10/loadingimg.gif",
+      loadingText : '<em><em>',
+      },
+      // trigger Masonry as a callback
+function( newElements ) {
+  var $newElems = $( newElements ).css({ opacity: 0 });
+  // ensure that images load before adding to masonry layout
+  $newElems.imagesLoaded(function(){
+    $newElems.animate({ opacity: 1 });
+    $container.masonry( 'appended', $newElems, true ); 
+  });
+}
+    );
+    
+  });
+</script>
+
+<!-- {/block:IndexPage} -->
+
+{block:IndexPage}
+<script type="text/javascript">
+$(window).load(function(){
+$("p").remove(":contains('Source:')");
+$("p").remove(":contains('(via')");
+});
+</script>
+{/block:IndexPage}
+
+</head>
+
+<body>
+
+<div class="head">
+
+    <span class="blogtitle">
+        {Title}
+    </span>
+    <span style="padding: 0 10px;"></span>
+    <span class="links">
+        {block:PermalinkPage}
+            <a href="/">index</a>&nbsp;&#9650;
+        {/block:PermalinkPage}
+        {block:AskEnabled}
+            <a href="/ask">ask</a>
+        {/block:AskEnabled}
+        {block:IfShowArchive}
+            °&nbsp;<a href="/archive">archive</a>
+        {/block:IfShowArchive}
+        {block:IfShowRSS}
+            °<a href="{RSS}">rss</a>
+        {/block:IfShowRSS}
+        {block:HasPages}
+            {block:Pages}
+               °<a href="{URL}">{Label}</a>
+            {/block:Pages}
+        {/block:HasPages}
+            <!---PLEASE DO NOT REMOVE THE CREDIT.--->
+                <big>©</big><a href="http://mason-jars.tumblr.com">credit</a>
+            <!---PLEASE DO NOT REMOVE THE CREDIT.--->
+    
+    {block:Description}
+        <span class="descriptbox">
+            <span class="description">
+                {Description}
+            </span>
+        </span>
+    {/block:Description}
+    
+    </span>
+
+</div>
+
+
+<div class="navigation">
+{block:Pagination}
+{block:PreviousPage}<a href="{PreviousPage}">Prev</a>{/block:PreviousPage}
+&nbsp;&nbsp;
+{block:NextPage}<a href="{NextPage}" class="next">Next</a>{/block:NextPage}
+{/block:Pagination}
+</div>
+
+
+<div class="bodie">
+{block:Posts}
+
+{block:Text}
+<div class="entry">
+    
+    {block:Title}
+        <div class="entrytitle">{Title}</div>
+    {/block:Title}
+    
+    <div class="entrybody">
+        {Body}
+    </div>
+    
+    {block:IndexPage}
+        <div class="perma">
+            <a href="{Permalink}">
+                PERMALINK
+            </a>   
+        </div>
+    {/block:IndexPage}
+</div>
+{/block:Text}
+
+{block:Photo}
+<div class="entry">
+
+    {block:IndexPage}
+        {LinkOpenTag}
+        <img src="{PhotoURL-250}" alt="{PhotoAlt}" width="250px"/>
+        {LinkCloseTag}
+    {/block:IndexPage}
+    
+    {block:PermalinkPage}
+        {LinkOpenTag}
+        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="400px"/>
+        {caption}
+        {LinkCloseTag}
+    {/block:PermalinkPage}
+    
+        {block:IndexPage}
+            <div class="photoperma">
+                <a href="{Permalink}">
+                    <span class="kanan">{Month} {DayOfMonth}{DayOfMonthSuffix}</span>
+                </a>
+            </div>
+        {/block:IndexPage}
+        
+    {block:IfShowCaption}
+        {block:Caption}
+            {Caption}
+        {/block:Caption}
+    {/block:IfShowCaption}
+        
+</div>
+{/block:Photo}
+
+{block:Photoset}
+<div class="entry">
+
+    <div class="photobox">
+        {block:IndexPage}
+            {Photoset-250}
+        {/block:IndexPage}
+    </div>
+    
+    {block:PermalinkPage}
+        {Photoset-400}
+    {/block:PermalinkPage}
+    
+    {block:IndexPage}
+            <div class="photoperma">
+                <a href="{Permalink}">
+                    <span class="kanan">{Month} {DayOfMonth}{DayOfMonthSuffix}</span>
+                </a>
+            </div>
+        {/block:IndexPage}
+    
+    {block:IfShowCaption}
+        {block:Caption}
+            {Caption}
+        {/block:Caption}
+    {/block:IfShowCaption}
+
+</div>
+{/block:Photoset}
+
+{block:Quote}
+<div class="entry">
+
+    <big>"</big><i>
+        <span class="quoteentry">
+            {Quote}
+        </span>
+    </i><big>"</big></span>
+    
+    {block:Source}
+        <div class="quotesource">
+            <b>by {Source}</b>
+        </div>
+    {/block:Source}
+    
+    {block:IndexPage}
+        <div class="perma">
+            <a href="{Permalink}">
+                PERMALINK
+            </a>
+        </div>
+    {/block:IndexPage}
+</div>
+{/block:Quote}
+
+{block:Audio}
+<div class="entry">
+    
+    {block:AlbumArt}
+        <div class="track">
+            {block:TrackName}
+                <div class="trackbg">TRACK: <i>{TrackName}</i></div>
+                <div class="spacing"></div>
+            {/block:TrackName}
+            {block:Artist}
+                <div class="trackbg">ARTIST: <i>{Artist}</i></div>
+                <div class="spacing"></div>
+            {/block:Artist}
+            {block:Album}
+                <div class="trackbg">ALBUM: <i>{Album}</i></div>
+                <div class="spacing"></div>
+            {/block:Album}
+                <div class="trackbg">PLAYS: <i>{FormattedPlayCount}</i></div>
+        </div>
+    {/block:AlbumArt}
+    
+    {block:AlbumArt}
+        <img src="{AlbumArtURL}">
+        <div class="spacing"></div>
+    {/block:AlbumArt}
+
+    <div class="audio1" style="border: 1px solid #000;">
+        {AudioPlayerWhite}
+    </div>
+
+    {block:Caption}
+        <div class="entrybody">
+            {Caption}
+        </div>
+    {/block:Caption}
+    
+    {block:IndexPage}
+        <div class="perma">
+            <a href="{Permalink}">
+                PERMALINK
+            </a>    
+        </div>
+    {/block:IndexPage}
+    
+</div>
+{/block:Audio}
+
+{block:Video}
+<div class="entry">
+    <div class="videobox">
+        <div class="video">
+            {block:IndexPage}
+                {Video-250}
+            {/block:IndexPage}
+        </div>
+            {block:PermalinkPage}
+                {Video-400}
+            {/block:PermalinkPage}
+    </div>
+    
+        {block:Caption}
+            <div class="entrybody">
+                {Caption}
+            </div>
+        {/block:Caption}
+    
+    {block:IndexPage}
+        <div class="perma">
+            <a href="{Permalink}">
+                PERMALINK
+            </a>
+        </div>
+    {/block:IndexPage}
+    
+</div>
+{/block:Video}
+
+{block:Chat}
+<div class="entry">
+    
+    {block:Title}
+        <div class="entrytitle">{Title}</div>
+    {/block:Title}
+    
+    {block:Lines}
+            {block:Label}
+                <span style="padding-bottom: 1px; border-bottom: 1px solid;">{Label}</span>
+            {block:Label}
+        {Line}
+        <div class="spacing"></div>
+    {/block:Lines}
+
+    {block:IndexPage}
+        <div class="perma">
+            <a href="{Permalink}">
+                PERMALINK
+            </a>
+        </div>
+    {/block:IndexPage}
+        
+</div>
+{/block:Chat}
+
+{block:Link}
+<div class="entry">
+    
+    <div class="entrytitle">
+        <a href="{URL}">
+            {Name}
+        </a>
+    </div>
+    
+    {block:Description}
+        {Description}
+    {/block:Description}
+    
+    {block:IndexPage}
+        <div class="perma">
+            <a href="{Permalink}">
+                PERMALINK
+            </a>
+        </div>
+    {/block:IndexPage}
+        
+</div>
+{/block:Link}
+
+{block:Answer}
+<div class="entry">
+
+    {Question} 
+    
+    <i><b>inquired by</b> <b>{Asker}</b></i>
+
+    <div class="entrybody">{Answer}</div>
+
+    {block:IndexPage}
+        <div class="perma">
+            <a href="{Permalink}">
+                PERMALINK
+            </a>
+        </div>
+    {/block:IndexPage}
+
+</div>
+{/block:Answer}
+
+{block:PermalinkPage}
+    {block:Date}
+            <b>Posted:</b> {MonthNumberWithZero}.{DayOfMonthWithZero}.{ShortYear}<br>{block:NoteCount}<b>Note Count:</b> {NoteCount}<br>{/block:NoteCount}{block:HasTags}{block:Tags}<b>Tags:</b> {Tag},{/block:Tags}{/block:HasTags}
+    {/block:Date}
+{/block:PermalinkPage}
+
+{block:PostNotes}
+    {PostNotes}
+{/block:PostNotes}
+
+{/block:Posts}
+
+</div>
+
+</body>
+
+</html>
