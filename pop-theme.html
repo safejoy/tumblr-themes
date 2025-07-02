@@ -1,0 +1,1381 @@
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+        
+        <!-- Pop by mason-jars (ddylanjoness) -->    	
+		<head>
+		    
+		<title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+        
+		<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+        
+		<meta name="author" content="Bruno Maia" />
+
+		<link href="{Favicon}" rel="shortcut icon" title="{Favicon}" />
+        
+		<link href="{RSS}" rel="alternate" title="{RSS}" type="application/rss+xml" />
+		
+		{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+        
+		<link rel='stylesheet' href='http://static.tumblr.com/xgwqnql/szhlc012n/reset.css' type='text/javascript' />
+        
+		<link href='http://fonts.googleapis.com/css?family=Graduate' rel='stylesheet' type='text/css'>
+        
+		<link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Pontano+Sans&subset=latin-ext' rel='stylesheet' type='text/css'>
+		
+		
+		<!-- DEFAULT -->
+		<meta name="image:Background" content=""/>
+		<meta name="image:Avatar" content=""/>
+	
+		<meta name="color:Background" content="#e6e4e4"/>
+		<meta name="color:Text" content="#666666"/>
+		<meta name="color:Top Sidebar Border" content="#cecccc"/>
+		<meta name="color:Post Background" content="#FFFFFF"/>
+		<meta name="color:Shadow Boxes" content="#F3F3F3"/>
+		<meta name="color:Top Link" content="#999999"/>
+		<meta name="color:Top Link Hover" content="#999999"/>
+		<meta name="color:Top Link Background Hover" content="#333333"/>
+		<meta name="color:Title" content="#000000"/>
+		<meta name="color:Title Shadow Hover" content="#000000"/>
+		<meta name="color:Avatar Border" content="#FFFFFF"/>
+		<meta name="color:Avatar Border Shadow" content="#999999"/>
+		<meta name="color:Menu Link" content="#999999"/>
+		<meta name="color:Menu Link Background" content="#000000"/>
+		<meta name="color:Post Options Background" content="#F0F0F0"/>
+		<meta name="color:Link" content="#0EC1F5"/>
+		<meta name="color:Link Hover" content="#0C58E7"/>
+		<meta name="color:Post Tagged Link" content="#444444"/>
+		<meta name="color:Post Tagged Link Background" content="#0EC1F5"/>
+		<meta name="color:Post Tagged Link Background Hover" content="#0F0F0F"/>
+		<meta name="color:Post Credists Background" content="#f3f3f3"/>
+		<meta name="color:Loading Post Text" content="#666666"/>
+		<meta name="color:Loading Post Background" content="#FFFFFF"/>
+		<meta name="color:Post Photo Zoom Background" content="#FFFFFF"/>
+		<meta name="color:Post Photo Zoom Background Shadow" content="#666666"/>
+		<meta name="color:Post Notes Background" content="#FFFFFF"/>
+		<meta name="color:Post Notes Action Background" content="#f3f3f3"/>
+		<meta name="color:Post Audio Background" content="#F0F0F0"/>
+		<meta name="color:Post Audio Background Information" content="#F4F4F4"/>
+		<meta name="color:Disqus Background" content="#FFFFFF"/>
+		<meta name="color:Top Background" content="#000000"/>
+		<meta name="color:Post Options Link" content="#666666"/>
+		<meta name="color:Post Options Link Hover" content="#333333"/>
+		<meta name="color:Ask Splitter" content="#F3F3F3"/>
+		<meta name="color:Chat Line ODD Background" content="#EEEEEE"/>
+		<meta name="color:Chat Line EVEN Background" content="#EBE3E2"/>
+		<meta name="color:Search Text" content="#666666"/>
+		<meta name="color:Search Background" content="#FFFFFF"/>
+		<meta name="color:Search Border" content="#F3F3F3"/>
+
+		<meta name="text:Disqus Shortname" content="" />
+		<meta name="text:Google Analytics ID" content=""/>
+	
+		<meta name="if:Show Search" content="0" />
+		<meta name="if:Photo Zoom" content="1" />
+		<meta name="if:Background No Repeat" content="0" />
+		<meta name="if:Background Fixed" content="1" />
+	
+		<style type="text/css">
+		* { margin: 0px; padding: 0px; }
+		body { font: 12px 'Pontano Sans', sans-serif; color: {color:Text}; background: {color:Background} url('{image:Background}') {block:ifBackgroundNoRepeat}no-repeat{/block:ifBackgroundNoRepeat};{block:ifBackgroundFixed}fixed{/block:ifBackgroundFixed} }
+		
+		p{margin-bottom:5px;}
+		
+		em{font-style:italic;}
+		
+		ol { margin: 2px; padding: 0px 0px 0px 6px; }
+		
+		li{ margin: 0 0 5px 16px; list-style: disc; }
+		
+		pre{ border-radius:1px; -webkit-border-radius:1px; -moz-border-radius:1px; background:#868686; color:#0F0F0F; padding:3px; margin-bottom:7px; font-family: "Courier New", Courier, monospace; }
+		
+		strong{font-weight:bold;}
+		
+		blockquote{ padding-left:4px; margin:0 0 0.5em 5px; border-left: 2px solid #f1f1f1; }
+		
+		h1, h2, h3, h4, h5, h6 { margin: 0px; font-size: 14px; text-align: center; }
+		
+		a { -webkit-transition:all 0.45s ease; -moz-transition:all 0.45s ease; transition:all 0.45s ease; -o-transition:all 0.45s ease; text-decoration: none; color:{color:Link}; }
+		
+		a:hover { color:{color:Link Hover}; }
+		
+		/* FIXED BUTTONS +FOLLOW, DASHBOARD,UNFOLLOW,REBLOG, AND MORE. */
+		#tumblr_controls{position: fixed !important;}
+        
+		
+        
+        
+		#general #side #menu a { opacity: 0.4; filter:alpha (opacity=90); display: block; padding: 4px 1px 4px 4px; margin: 0px 0px 2px; height: 15px; background: {color:Menu Link Background};color: {color:Menu Link};}
+		#top { padding: 0px 0px 6px; width: 100%; border-bottom: 1px solid {color:Top Sidebar Border}; }
+		#top #sedebar #left { float: left; width: 450px; padding: 0px 9px 0px 0px; border-right: solid 1px {color:Top Sidebar Border};}
+		#top #sedebar #left #description #avatar { border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; -o-border-radius: 3px; box-shadow: 0px 0px 3px; float: left; padding: 5px; box-shadow: 0px 0px 2px {color:Avatar Border Shadow};  background: {color:Avatar Border};}
+		#general #posted #inside #notes { padding: 2px; border-radius: 1px; -webkit-border-radius: 1px; -moz-border-radius: 1px; -o-border-radius: 1px; list-style: none; margin: 0px 5px 15px; clear: both; font-size: 10px; width: 506px; box-shadow: 0px 0px 3px {color:Shadow Boxes}; background: {color:Post Notes Background};}
+		#general #posted #inside #notes ol.notes li { list-style: none; padding: 2px; margin: 2px; float: left; width: 245px; display: block;  background: {color:Post Notes Action Background};}
+		#general #posted #inside #photo #size:hover {
+		{block:IfPhotoZoom}
+		width: 350px;
+		position: absolute;
+		padding: 5px;
+		z-index: 9999;
+		margin: -55px;
+		border-radius:2px;
+		box-shadow: 0px 0px 3px {color:Post Photo Zoom Background Shadow};
+		background: {color:Post Photo Zoom Background};
+		{/block:IfPhotoZoom}}
+		#general #posted #inside #options #details {margin: 5px 0px 0px;padding: 2px;background:{color:Post Options Background}; }
+		#general #posted #inside #options #credits { margin: 5px 0px 0px; padding: 2px; background: {colo:Post Credists Background}; }
+		#general #posted #inside #fund {border-radius: 1px;-webkit-border-radius: 1px;-moz-border-radius: 1px;-o-border-radius: 1px;width: 250px;margin: 5px;padding: 5px;float: left;background: {color:Post Background};box-shadow: 0px 0px 3px {color:Shadow Boxes}; }
+		#infinite-scroll_loading { width: 170px; padding:6px; position:fixed; opacity:0.6; z-index:5000; border-radius:2px; -webkit-border-radius:2px; -moz-border-radius:2px; -o-border-radius:2px; float: right; bottom: 8px; right: 8px; background:{color:Loading Post Background}; color:{color:Loading Post Text}; text-align:center; }
+		#top #sedebar #right #title a { color: {color:Title}; }
+		#top #sedebar #right #title a:hover { text-shadow: 1px 1px 3px {color:Title Shadow Hover}; }
+		#general #posted #inside #fund #audio { border-radius:1px; -webkit-border-radius:1px; -moz-border-radius:1px; -o-border-radius:1px; padding: 2px 0px; background: {color:Post Audio Background};}
+		#general #posted #inside #fund #audio #caixa { margin: 0px 2px 2px; padding: 4px; background: {color:Post Audio Background Information}; }
+		#general #posted #inside #right { border-radius: 1px; -webkit-border-radius: 1px; -moz-border-radius: 1px; -o-border-radius: 1px; float: right; width: 270px; margin: 5px; background: #FFF; padding: 5px; box-shadow: 0px 0px 3px {color:Shadow Boxes}; }
+		#general #posted #inside #right #tagged a { padding: 2px 5px; color:{color:Post Tagged Link}; background: {color:Post Tagged Link Background}; }
+		#general #posted #inside #right #tagged a:hover { background:{color:Post Tagged Link Background Hover}; }
+		#general #posted #inside #fund #chat .line.odd { background: {color:Chat Line ODD Background}; }
+		#general #posted #inside #fund #chat .line.even { background: {color:Chat Line EVEN Background}; }
+		#top #links { font: 12px Arial, 'Helvetica Neue', Helvetica, sans-serif; position: fixed; left: 0px; top: 0px; width: 100%; z-index: 900; background: {color:Top Background}; }
+		#top #links #left a { padding: 8px; display: block; float: left; width: 70px; text-align: center; color: {color:Top Link}; }
+		#top #links #left a:hover { color: {color:Top Link Hover}; background: {color:Top Link Background Hover}; }
+		#general #posted #inside #fund #asked #answer { margin: 6px 0px 0px; padding: 4px 4px 0px; border-top: 1px solid {color:Ask Splitter}; }
+
+/* EXTRA: DISQUS */
+#disqus_thread {border-radius: 2px;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;padding: 5px;clear: both;width: 505px;background: {color:Disqus Background};box-shadow:0px 0px 2px {color:Shadow Boxes};}
+
+#general #posted #inside #fund #options a { color: {color:Post Options Link}; }
+#general #posted #inside #fund #options a:hover { color: {color:Post Options Link Hover}; }
+#general #side #search #form #box
+{width: 86px;opacity: 0.7;margin: 0px;border-radius: 2px;-webkit-border-radius: 2px;-moz-border-radius: 2px;-o-border-radius: 2px; background-image: url('http://static.tumblr.com/fhfxoyt/POTlzmt6f/wasinthepast.gif'); background-repeat: no-repeat; background-position: 90px;padding-top: 3px; padding-right: 18px; padding-bottom: 3px; padding-left: 3px; background-color: {color:Search Background};border: 1px solid {color:Search Border}; color: {color:Search Text};}
+#clear { clear: both; }
+
+
+.dsq-append-post {zoom: 1;}
+#dsq-subscribe { display: none; }
+#disqus_thread li, #disqus_thread span { list-style-type: none !important; }
+.dsq-brlink { display: none; }
+#dsq-content div, #dsq-content p, #dsq-content h3 { clear:none !important; }
+#dsq-content { overflow:auto !important; }
+#dsq-content { color:#333!important; }
+.dsq-full-comment { color: #F00 !important; }
+.dsq-comment-body { color: #666 !important; }
+#dsq-content .dsq-moderator .dsq-comment-header { background: #EBF0F5; }
+#dsq-content #dsq-comments .dsq-comment-message { font-size: 11px; }
+#dsq-content #dsq-global-toolbar { clear: both !important; }
+#general { width: 925px; margin: 15px auto 35px; }
+
+#general #posted {float: right;width: 810px;position: relative;}
+#general #posted #inside {float: left;width: 270px;position: relative;}
+#general #posted #inside #caption { padding: 3px 0px 0px; }
+#general #posted #bottom { clear: both; margin: 0px 5px 5px; padding: 15px 0px 0px; position: static; bottom: 0px; display: none; }
+#general #posted #inside #options { text-align: center; font-size: 10px; }
+#general #posted #inside #photo #size {display: block;position: relative;z-index: 9;}
+#general #side { float: left; width: 110px; position: fixed; margin: 5px 0px 0px; }
+#general #side  #menu a:hover { padding-left: 18px; opacity:1; }
+#top #sedebar { margin: 44px auto 0px; width: 920px; padding: 0px 5px 0px 0px; }
+#top #sedebar #left #description p { float: right; display: block; width: 330px; text-align: justify; }
+#general #posted #inside #notes .notes { margin: 0px; padding: 0px; }
+#general #posted #inside #notes ol.notes { margin: 0px; padding: 0px; }
+#general #posted #inside #notes .notes .avatar { display: none; }
+#general #posted #bottom #pagination { padding: 10px; }
+#general #posted #bottom #pagination a { padding: 6px; margin: 0px 6px; }
+#general #posted #bottom #pagination #pages { padding: 6px; }
+#general #posted #inside #photo #size { -webkit-transition:all 0.45s ease; -moz-transition:all 0.45s ease; transition:all 0.45s ease; -o-transition:all 0.45s ease; }
+#general #posted #inside.permalink { width: 810px; }
+#general #posted #inside #fund.permalink { width: 500px; margin-bottom: 10px; text-align: justify; font-size: 12px; }
+#general #posted #inside #fund #quote #text.permalink { font-size: 16px; text-align: justify; }
+#general #posted #inside #fund #quote #source { margin: 6px 0px 0px; padding: 0px 0px 0px 8px; }
+#general #posted #inside #fund #link #name #permalink { font-size: 18px; text-align: left; }
+#general #posted #inside #fund #text #permalink { font-size: 18px; text-align: justify; }
+#general #posted #inside #fund #chat .permalink { font-size: 18px; text-align: left; }
+#top #sedebar #right { float: right; width: 450px; }
+#top #sedebar #right #title { font: 400 30px/70% 'Graduate', cursive; text-align: center; }
+#general #posted #inside #fund #audio.permalink { background-color: transparent; padding: 0px; }
+#general #posted #inside #fund #audio #caixa.player { padding: 1px; }
+#general #posted #inside #fund #audio #caixa.ultimo { margin-bottom: 0px; }
+#general #search{clear: both;width: 110px;position: fixed;float: left;}
+#general #side #search #form #box:hover {opacity: 1;}
+#general #side #search {margin-top: 10px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;}
+#top #links #left #ask{width: auto;}
+#top #links #left #submit{width: auto;}
+#general #posted #inside #disqus{clear: both;width: 515px;}
+#top #links #left { float: left; }
+#general #posted #inside #fund #photoset .html_photoset {  margin-bottom: -7px; }
+#general #posted #inside #fund #chat .line {  padding: 3px; margin: 0px 0px 2px; }
+#general #posted #inside #right #buttons #plusone { display: block; float: left; margin-right: 0px; margin-bottom: -7px; margin-left: 0px; }
+#general #posted #inside #right #tagged { margin: 2px 0px 8px; }
+
+
+{CustomCSS}
+</style>
+	
+	
+	<script src="http://static.tumblr.com/fhfxoyt/tYPm16j92/jquary-1.7.1.min.js"></script>
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+	<script src="http://connect.facebook.net/pt_BR/all.js#xfbml=1" type="text/javascript"></script>
+	
+	
+	
+	<script type="text/javascript" src="http://static.tumblr.com/fhfxoyt/Mb2m14qm2/jquery.masonry.min.js"></script>
+	<script type="text/javascript" src="http://static.tumblr.com/fhfxoyt/Gvom14qgn/infinitescroll.min.js"></script>
+
+<script type="text/javascript">			
+        $(window).load(function () {
+          var $content = $('#posted, .notes');
+            $content.masonry({
+              itemSelector: '#inside, ol.notes li',
+                isAnimated: true
+			            }),
+        $content.infinitescroll({
+		navSelector: '#pagination',  
+		  nextSelector: '#pagination a#nextPage', 
+		    itemSelector: '#inside',
+			loading: {
+			  msgText: 'Loading more posts...',
+			   img: 'http://static.tumblr.com/glziqhp/1hJlo5wh1/ajax-loader__1_.gif',
+			  finishedMsg: 'All posts were displayed.'
+			},
+			bufferPx: 270,
+			debug: false,
+        },
+        // call masonry as a callback.
+        function( newElements ) {
+				var $newElems = $( newElements );
+			$newElems.hide();
+		// ensure that images load before adding to masonry layout
+                     $newElems.imagesLoaded(function(){
+                  $content.masonry( 'appended', 
+                $newElems, true,
+              function(){$newElems.fadeIn(300);} 
+          );
+			
+            });
+      });
+      });
+</script>
+
+
+	<script type=text/javascript>
+	  $(function() {
+	       var offset = $("#side").offset();
+		  var topPadding = 15;	
+		    $(window).scroll(function() {
+		  if ($(window).scrollTop() > offset.top) {
+		  $("#side").stop().animate({
+		 marginTop: -141
+			  });
+	       } else {
+		  $("#side").stop().animate({
+		 marginTop: 5
+			});
+		 };
+	       });
+	   });
+	</script>
+	
+		</head>
+		<body>
+		
+		<div id="top">
+		<div id="links">
+		<div id="left">
+		<a href="/" title="{lang:Home}">{lang:Home}</a>
+		<a href="/random" title="{lang:Random post}">{lang:Random}</a>
+		<a href="/archive" title="{lang:Archive}" target="_blank">{lang:Archive}</a>
+		<a href="/mobile" title="{lang:Mobile version}" target="_blank">{lang:Mobile}</a>
+		<a href="{RSS}" title="{lang:RSS feed}" target="_blank">{lang:RSS feed}</a>
+		{block:AskEnabled}
+		<a href="/ask" title="{AskLabel}" id="ask">{AskLabel}</a>
+		{/block:AskEnabled}
+		{block:SubmissionsEnabled}
+		<a id="submit" href="/submit" title="{SubmitLabel}">{SubmitLabel}</span></a>
+		{/block:SubmissionsEnabled}
+	
+		{block:Twitter}
+		<a href="https://twitter.com/{TwitterUsername}" title="{lang:Follow me}">Twitter</a>
+		{/block:Twitter}
+	
+		</div>
+	
+		<div id="clear"></div>
+		</div>
+		
+		<div id="sedebar">
+		<div id="left">
+		<div id="description">
+        {block:IfAvatarImage}
+		<img src="{image:Avatar}" id="avatar" width="101" />
+        {/block:IfAvatarImage}
+		{block:IfNotAvatarImage}
+		<img src="{PortraitURL-64}" width="64" id="avatar" alt="{Title}"/>
+		{/block:IfNotAvatarImage}
+		<p>
+		{block:Description}
+		{Description}
+		{/block:Description}
+		</p>
+		<div id="clear"></div>
+		</div>
+		</div>
+		
+		<div id="right">
+		<div id="title"><a href="/">{Title}</a></div>
+		</div>
+		<div id="clear"></div>
+		</div>
+		</div>
+		
+		
+		<div id="general">
+		<div id="side">
+		<div id="menu">
+		<a href="/" title="{lang:Home}">{lang:Home}</a>
+		{block:HasPages}
+		{block:Pages}
+		<a href="{URL}" title="{Label}">{Label}</a>
+		{/block:Pages}
+		{/block:HasPages}
+               <a href="http://mason-jars.tumblr.com" title="Theme">Theme</a>
+		</div>
+        
+        {block:IfShowSearch}
+        <div id="search">
+        <form action="/search" method="get" id="form">
+<input type="hidden" name="t" value="{Name}" />
+<input type="text" id="box" name="q" value="{SearchQuery}" />
+</form>
+        </div>
+        {/block:IfShowSearch}
+		</div>
+        
+		
+        <div id="posted">
+		{block:Posts}{block:Text}
+		{Block:IndexPage}
+		<div id="inside">
+		
+		<div id="fund">
+		
+		<div id="text" class="indexpage">
+		{block:Title}<h1>{Title}</h1>{/block:Title}
+		<div id="caption">{Body}</div>
+		</div>
+		
+		{block:Date}
+		<div id="options">
+		
+		<div id="details">
+		{DayOfMonth}/{MonthNumberWithZero}/{Year} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		
+		<a href="{Permalink}" title="{lang:Permalink for this post}">{lang:Permalink}</a> -
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		</div>
+		{/block:Date}
+		
+		</div>
+		
+		
+		</div>
+		{Block:IndexPage}
+		
+		
+		{block:Permalink}
+		<div id="inside" class="permalink">
+		<div id="right">
+		{block:HasTags}
+		<div id="tagged">
+		{block:Tags}
+		<a href="{TagURL}" title="{Tag}">#{Tag}</a> 
+		{/block:Tags}
+		</div>
+		{block:HasTags}
+		
+		
+		<div id="buttons">
+		<!-- BUTTON FACEBOOK -->
+		<fb:like href="{Permalink}" layout="button_count" send="false" show_faces="false" font="arial" action="like" colorscheme="light"></fb:like>
+		
+		<!-- BUTTOM GOOGLE +1 -->
+		<span id="plusone"><g:plusone size="medium" href="{Permalink}"></g:plusone></span>
+		</div>
+		</div>
+		
+		<div id="fund" class="permalink">
+		
+		<div id="text">
+		{block:Title}<h1 id="permalink">{Title}</h1>{/block:Title}
+		<div id="caption">{Body}</div>
+		</div>
+		
+		{block:Date}
+		<div id="options">
+		<div id="details">
+		Postado {DayOfMonth}/{MonthNumberWithZero}/{Year} ás {12Hour}:{Minutes}{AmPm} - {TimeAgo} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		
+		<div id="credits">
+		{block:ContentSource}
+        {lang:Source} <a href="{SourceURL}" target="_blank">{SourceTitle}</a>
+        
+		{/block:ContentSource}
+						
+		{block:RebloggedFrom}-
+		<a href="{ReblogParentURL}" title="{ReblogParentTitle}" target="_blank">{lang:Reblogged} {ReblogParentName}</a>
+		{/block:RebloggedFrom}
+		</div>
+		
+		</div>
+		{/block:Date}
+		</div>
+        
+<div id="disqus">
+{block:IfDisqusShortname}
+<script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+{block:Permalink}
+<div id="disqus_thread"></div>
+<script type="text/javascript">(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+				
+<noscript>
+Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a>
+</noscript>
+				
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a> {/block:Permalink}
+<script type="text/javascript">var disqus_shortname = '{text:Disqus Shortname}';(function () {var s = document.createElement('script'); s.async = true;s.src = 'http://disqus.com/forums/{text:Disqus Shortname}/count.js';(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script>	
+{/block:IfDisqusShortname}
+</div>
+        
+		{block:PostNotes}
+		<div id="notes">
+		{PostNotes}
+		<div id="clear"></div>
+		</div>
+		{/block:PostNotes}
+		
+		<div id="clear"></div>
+		</div>
+		{/block:Permalink}
+		
+		{/block:Text}{block:Photo}
+		
+		{Block:IndexPage}
+		<div id="inside">
+		<div id="fund">
+		
+		<div id="photo" class="indexpage">
+	
+		
+		<img src="{PhotoURL-250}" alt="{PhotoAlt}" width="250" id="size" />
+		{block:Permalink}
+		{block:Caption}
+		<div id="caption">{Caption}</div>
+		{/block:Caption}
+		{/block:Permalink}
+		
+		</div>
+		
+		{block:Date}
+		<div id="options">
+		
+		<div id="details">
+		{DayOfMonth}/{MonthNumberWithZero}/{Year} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		
+		<a href="{Permalink}" title="{lang:Permalink for this post}">{lang:Permalink}</a> -		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		</div>
+		{/block:Date}
+		
+		</div>
+		</div>
+		{/Block:IndexPage}
+		
+		
+		{block:Permalink}
+		<div id="inside" class="permalink">
+		<div id="right">
+		{block:HasTags}
+		<div id="tagged">
+		{block:Tags}
+		<a href="{TagURL}" title="{Tag}">#{Tag}</a> 
+		{/block:Tags}
+		</div>
+		{block:HasTags}
+		
+		
+		<div id="buttons">
+		<!-- BUTTON FACEBOOK -->
+		<fb:like href="{Permalink}" layout="button_count" send="false" show_faces="false" font="arial" action="like" colorscheme="light"></fb:like>
+		
+		<!-- BUTTOM GOOGLE +1 -->
+		<span id="plusone"><g:plusone size="medium" href="{Permalink}"></g:plusone></span>
+		</div>
+		</div>
+		
+		<div id="fund" class="permalink">
+		
+		<div id="none">
+		
+		<img src="{PhotoURL-500}" alt="{PhotoAlt}" width="500" id="size" />
+		
+		{block:Caption}
+		<div id="caption">{Caption}</div>
+		{/block:Caption}
+		
+		</div>
+		
+		{block:Date}
+		<div id="options">
+		<div id="details">
+		Postado {DayOfMonth}/{MonthNumberWithZero}/{Year} ás {12Hour}:{Minutes}{AmPm} - {TimeAgo} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		
+		<div id="credits">
+		{block:ContentSource}
+        {lang:Source} <a href="{SourceURL}" target="_blank">{SourceTitle}</a>
+        
+		{/block:ContentSource}
+						
+		{block:RebloggedFrom}-
+		<a href="{ReblogParentURL}" title="{ReblogParentTitle}" target="_blank">{lang:Reblogged} {ReblogParentName}</a>
+		{/block:RebloggedFrom}
+		</div>
+		
+		</div>
+		{/block:Date}
+		
+		</div>
+<div id="disqus">
+{block:IfDisqusShortname}
+<script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+{block:Permalink}
+<div id="disqus_thread"></div>
+<script type="text/javascript">(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+				
+<noscript>
+Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a>
+</noscript>
+				
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a> {/block:Permalink}
+<script type="text/javascript">var disqus_shortname = '{text:Disqus Shortname}';(function () {var s = document.createElement('script'); s.async = true;s.src = 'http://disqus.com/forums/{text:Disqus Shortname}/count.js';(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script>	
+{/block:IfDisqusShortname}
+</div>
+		{block:PostNotes}
+		<div id="notes">
+		{PostNotes}
+		<div id="clear"></div>
+		</div>
+		{/block:PostNotes}
+		
+		<div id="clear"></div>
+		</div>
+		{/block:Permalink}
+		
+		{/block:Photo}{block:Photoset}
+		{Block:IndexPage}
+		<div id="inside">
+		<div id="fund">
+		
+		<div id="photoset" class="indexpage">
+		<div>
+		{Photoset-250}
+		</div>
+		{block:Caption}
+		<div id="caption">{Caption}</div>
+		{/block:Caption}
+		</div>
+		
+					
+		{block:Date}
+		<div id="options">
+		
+		<div id="details">
+		{DayOfMonth}/{MonthNumberWithZero}/{Year} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		
+		<a href="{Permalink}" title="{lang:Permalink for this post}">{lang:Permalink}</a> -
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		</div>
+		{/block:Date}
+		</div>
+		</div>
+		{/Block:IndexPage}
+		
+		
+		{block:Permalink}
+		<div id="inside" class="permalink">
+		<div id="right">
+		{block:HasTags}
+		<div id="tagged">
+		{block:Tags}
+		<a href="{TagURL}" title="{Tag}">#{Tag}</a> 
+		{/block:Tags}
+		</div>
+		{block:HasTags}
+		
+		
+		<div id="buttons">
+		<!-- BUTTON FACEBOOK -->
+		<fb:like href="{Permalink}" layout="button_count" send="false" show_faces="false" font="arial" action="like" colorscheme="light"></fb:like>
+		
+		<!-- BUTTOM GOOGLE +1 -->
+		<span id="plusone"><g:plusone size="medium" href="{Permalink}"></g:plusone></span>
+		</div>
+		</div>
+		
+		<div id="fund" class="permalink">
+		
+		<div id="photoset">
+		<div>
+		{Photoset-500}
+		</div>
+		{block:Caption}
+		<div id="caption">{Caption}</div>
+		{/block:Caption}
+		</div>
+		
+					
+		{block:Date}
+		<div id="options">
+		<div id="details">
+		Postado {DayOfMonth}/{MonthNumberWithZero}/{Year} ás {12Hour}:{Minutes}{AmPm} - {TimeAgo} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		
+		<div id="credits">
+		{block:ContentSource}
+        {lang:Source} <a href="{SourceURL}" target="_blank">{SourceTitle}</a>
+        
+		{/block:ContentSource}
+						
+		{block:RebloggedFrom}-
+		<a href="{ReblogParentURL}" title="{ReblogParentTitle}" target="_blank">{lang:Reblogged} {ReblogParentName}</a>
+		{/block:RebloggedFrom}
+		</div>
+		
+		</div>
+		{/block:Date}
+		</div>
+		<div id="disqus">
+{block:IfDisqusShortname}
+<script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+{block:Permalink}
+<div id="disqus_thread"></div>
+<script type="text/javascript">(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+				
+<noscript>
+Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a>
+</noscript>
+				
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a> {/block:Permalink}
+<script type="text/javascript">var disqus_shortname = '{text:Disqus Shortname}';(function () {var s = document.createElement('script'); s.async = true;s.src = 'http://disqus.com/forums/{text:Disqus Shortname}/count.js';(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script>	
+{/block:IfDisqusShortname}
+</div>
+		{block:PostNotes}
+		<div id="notes">
+		{PostNotes}
+		<div id="clear"></div>
+		</div>
+		{/block:PostNotes}
+		
+		<div id="clear"></div>
+		</div>
+		{/block:Permalink}
+		
+		{/block:Photoset}{block:Quote}
+		{Block:IndexPage}
+		<div id="inside">
+		<div id="fund">
+		
+		<div id="quote" class="indexpage">
+		<h1 id="text">{Quote}</h1>
+		{block:Source}
+		<div id="source">- {Source}</div>
+		{/block:Source}
+		</div>
+		
+		
+		{block:Date}
+		<div id="options">
+		
+		<div id="details">
+		{DayOfMonth}/{MonthNumberWithZero}/{Year} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		
+		<a href="{Permalink}" title="{lang:Permalink for this post}">{lang:Permalink}</a> -		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		</div>
+		{/block:Date}
+		</div>
+		
+		
+		</div>
+		{/Block:IndexPage}
+		
+		
+		{block:Permalink}
+		<div id="inside" class="permalink">
+		<div id="right">
+		{block:HasTags}
+		<div id="tagged">
+		{block:Tags}
+		<a href="{TagURL}" title="{Tag}">#{Tag}</a> 
+		{/block:Tags}
+		</div>
+		{block:HasTags}
+		
+		
+		<div id="buttons">
+		<!-- BUTTON FACEBOOK -->
+		<fb:like href="{Permalink}" layout="button_count" send="false" show_faces="false" font="arial" action="like" colorscheme="light"></fb:like>
+		
+		<!-- BUTTOM GOOGLE +1 -->
+		<span id="plusone"><g:plusone size="medium" href="{Permalink}"></g:plusone></span>
+		</div>
+		</div>
+		
+		
+		<div id="fund" class="permalink">
+		
+		<div id="quote">
+		<h1 id="text" class="permalink">{Quote}</h1>
+		{block:Source}
+		<div id="source">- {Source}</div>
+		{/block:Source}
+		</div>
+		
+		
+		{block:Date}
+		<div id="options">
+		<div id="details">
+		Postado {DayOfMonth}/{MonthNumberWithZero}/{Year} ás {12Hour}:{Minutes}{AmPm} - {TimeAgo} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		
+		<div id="credits">
+		{block:ContentSource}
+        {lang:Source} <a href="{SourceURL}" target="_blank">{SourceTitle}</a>
+        
+		{/block:ContentSource}
+						
+		{block:RebloggedFrom}-
+		<a href="{ReblogParentURL}" title="{ReblogParentTitle}" target="_blank">{lang:Reblogged} {ReblogParentName}</a>
+		{/block:RebloggedFrom}
+		</div>
+		
+		</div>
+		{/block:Date}
+		</div>
+		<div id="disqus">
+{block:IfDisqusShortname}
+<script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+{block:Permalink}
+<div id="disqus_thread"></div>
+<script type="text/javascript">(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+				
+<noscript>
+Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a>
+</noscript>
+				
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a> {/block:Permalink}
+<script type="text/javascript">var disqus_shortname = '{text:Disqus Shortname}';(function () {var s = document.createElement('script'); s.async = true;s.src = 'http://disqus.com/forums/{text:Disqus Shortname}/count.js';(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script>	
+{/block:IfDisqusShortname}
+</div>
+		{block:PostNotes}
+		<div id="notes">
+		{PostNotes}
+		<div id="clear"></div>
+		</div>
+		{/block:PostNotes}
+		
+		<div id="clear"></div>
+		</div>
+		{/block:Permalink}
+		
+		{/block:Quote}{block:Link}
+		{Block:IndexPage}
+		<div id="inside">
+		<div id="fund">
+		
+		<div id="link" class="indexpage">
+		<div id="name">
+				<h1><a href="{URL}" class="link" {Target}>{Name}</a></h1></div>
+		{block:Description}<div id="caption">{Description}</div>
+		{/block:Description} 
+		</div>
+		
+		
+		
+		
+		
+		{block:Date}
+		<div id="options">
+		
+		<div id="details">
+		{DayOfMonth}/{MonthNumberWithZero}/{Year} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		
+		<a href="{Permalink}" title="{lang:Permalink for this post}">{lang:Permalink}</a> -
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		</div>
+		{/block:Date}
+		</div>
+		</div>
+		{/Block:IndexPage}
+		
+		
+		{block:Permalink}
+		<div id="inside" class="permalink">
+		<div id="right">
+		{block:HasTags}
+		<div id="tagged">
+		{block:Tags}
+		<a href="{TagURL}" title="{Tag}">#{Tag}</a> 
+		{/block:Tags}
+		</div>
+		{block:HasTags}
+		
+		
+		<div id="buttons">
+		<!-- BUTTON FACEBOOK -->
+		<fb:like href="{Permalink}" layout="button_count" send="false" show_faces="false" font="arial" action="like" colorscheme="light"></fb:like>
+		
+		<!-- BUTTOM GOOGLE +1 -->
+		<span id="plusone"><g:plusone size="medium" href="{Permalink}"></g:plusone></span>
+		</div>
+		</div>
+		<div id="fund" class="permalink">
+		
+		<div id="link">
+		<div id="name">
+		<h1 id="permalink"><a href="{URL}" class="link" {Target}>{Name}</a></h1>
+		</div>
+		{block:Description}<div id="caption">{Description}</div>
+		{/block:Description} 
+		</div>
+		
+		
+		{block:Date}
+		<div id="options">
+		<div id="details">
+		Postado {DayOfMonth}/{MonthNumberWithZero}/{Year} ás {12Hour}:{Minutes}{AmPm} - {TimeAgo} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		
+		<div id="credits">
+		{block:ContentSource}
+        {lang:Source} <a href="{SourceURL}" target="_blank">{SourceTitle}</a>
+        
+		{/block:ContentSource}
+						
+		{block:RebloggedFrom}-
+		<a href="{ReblogParentURL}" title="{ReblogParentTitle}" target="_blank">{lang:Reblogged} {ReblogParentName}</a>
+		{/block:RebloggedFrom}
+		</div>
+		
+		</div>
+		{/block:Date}
+		</div>
+		<div id="disqus">
+{block:IfDisqusShortname}
+<script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+{block:Permalink}
+<div id="disqus_thread"></div>
+<script type="text/javascript">(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+				
+<noscript>
+Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a>
+</noscript>
+				
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a> {/block:Permalink}
+<script type="text/javascript">var disqus_shortname = '{text:Disqus Shortname}';(function () {var s = document.createElement('script'); s.async = true;s.src = 'http://disqus.com/forums/{text:Disqus Shortname}/count.js';(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script>	
+{/block:IfDisqusShortname}
+</div>
+		{block:PostNotes}
+		<div id="notes">
+		{PostNotes}
+		<div id="clear"></div>
+		</div>
+		{/block:PostNotes}
+		
+		<div id="clear"></div>
+		</div>
+		{/block:Permalink}
+		
+		{/block:Link}{block:Chat}
+		{Block:IndexPage}
+		<div id="inside">
+		<div id="fund">
+		
+		<div id="chat" class="indexpage">
+		{block:Title}
+		<h1>{Title}</h1>
+		{/block:Title}
+	
+		{block:Lines}                               
+		<div class="line {Alt}">{block:Label}
+		<span id="label">{Label}</span>
+		{/block:Label}
+		{Line}</div>
+		{/block:Lines}			
+		</div>
+		
+		
+		{block:Date}
+		<div id="options">
+		
+		<div id="details">
+		{DayOfMonth}/{MonthNumberWithZero}/{Year} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		
+		<a href="{Permalink}" title="{lang:Permalink for this post}">{lang:Permalink}</a> -
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		</div>
+		{/block:Date}
+		</div>
+		
+		
+		</div>
+		{/Block:IndexPage}
+		
+		
+		{block:Permalink}
+		<div id="inside" class="permalink">
+		<div id="right">
+		{block:HasTags}
+		<div id="tagged">
+		{block:Tags}
+		<a href="{TagURL}" title="{Tag}">#{Tag}</a> 
+		{/block:Tags}
+		</div>
+		{block:HasTags}
+		
+		
+		<div id="buttons">
+		<!-- BUTTON FACEBOOK -->
+		<fb:like href="{Permalink}" layout="button_count" send="false" show_faces="false" font="arial" action="like" colorscheme="light"></fb:like>
+		
+		<!-- BUTTOM GOOGLE +1 -->
+		<span id="plusone"><g:plusone size="medium" href="{Permalink}"></g:plusone></span>
+		</div>
+		</div>
+		
+		<div id="fund" class="permalink">
+		
+		<div id="chat">
+		{block:Title}
+		<h1 class="permalink">{Title}</h1>
+		{/block:Title}
+		{block:Lines}                               
+		<div class="line {Alt}">{block:Label}
+		<span id="label">{Label}</span>
+		{/block:Label}
+		{Line}</div>
+		{/block:Lines}			
+		</div>
+		
+		
+		{block:Date}
+		<div id="options">
+		<div id="details">
+		Postado {DayOfMonth}/{MonthNumberWithZero}/{Year} ás {12Hour}:{Minutes}{AmPm} - {TimeAgo} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		
+		<div id="credits">
+		{block:ContentSource}
+        {lang:Source} <a href="{SourceURL}" target="_blank">{SourceTitle}</a>
+        
+		{/block:ContentSource}
+						
+		{block:RebloggedFrom}-
+		<a href="{ReblogParentURL}" title="{ReblogParentTitle}" target="_blank">{lang:Reblogged} {ReblogParentName}</a>
+		{/block:RebloggedFrom}
+		</div>
+		
+		</div>
+		{/block:Date}
+		</div>
+		<div id="disqus">
+{block:IfDisqusShortname}
+<script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+{block:Permalink}
+<div id="disqus_thread"></div>
+<script type="text/javascript">(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+				
+<noscript>
+Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a>
+</noscript>
+				
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a> {/block:Permalink}
+<script type="text/javascript">var disqus_shortname = '{text:Disqus Shortname}';(function () {var s = document.createElement('script'); s.async = true;s.src = 'http://disqus.com/forums/{text:Disqus Shortname}/count.js';(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script>	
+{/block:IfDisqusShortname}
+</div>
+		{block:PostNotes}
+		<div id="notes">
+		{PostNotes}
+		<div id="clear"></div>
+		</div>
+		{/block:PostNotes}
+		
+		<div id="clear"></div>
+		</div>
+		{/block:Permalink}
+		
+		{/block:Chat}{block:Video}
+		
+		{Block:IndexPage}
+		<div id="inside">
+		<div id="fund">
+		
+		<div id="video" class="indexpage">
+		<div id="video">{Video-250}</div>
+		{block:Caption}<div id="caption">{Caption}</div>
+		{/block:Caption}
+		</div>
+		
+		
+		{block:Date}
+		<div id="options">
+		
+		<div id="details">
+		{DayOfMonth}/{MonthNumberWithZero}/{Year} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		
+		<a href="{Permalink}" title="{lang:Permalink for this post}">{lang:Permalink}</a> -
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		</div>
+		{/block:Date}
+		</div>
+		</div>
+		{/Block:IndexPage}
+		
+		
+		{block:Permalink}
+		<div id="inside" class="permalink">
+		<div id="right">
+		{block:HasTags}
+		<div id="tagged">
+		{block:Tags}
+		<a href="{TagURL}" title="{Tag}">#{Tag}</a> 
+		{/block:Tags}
+		</div>
+		{block:HasTags}
+		
+		
+		<div id="buttons">
+		<!-- BUTTON FACEBOOK -->
+		<fb:like href="{Permalink}" layout="button_count" send="false" show_faces="false" font="arial" action="like" colorscheme="light"></fb:like>
+		
+		<!-- BUTTOM GOOGLE +1 -->
+		<span id="plusone"><g:plusone size="medium" href="{Permalink}"></g:plusone></span>
+		</div>
+		</div>
+		
+		<div id="fund" class="permalink">
+		
+		<div id="video">
+		<div id="video">{Video-500}</div>
+		{block:Caption}
+		<div id="caption">{Caption}</div>
+		{/block:Caption}
+		</div>
+		
+		
+		{block:Date}
+		<div id="options">
+		<div id="details">
+		Postado {DayOfMonth}/{MonthNumberWithZero}/{Year} ás {12Hour}:{Minutes}{AmPm} - {TimeAgo} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		
+		<div id="credits">
+		{block:ContentSource}
+        {lang:Source} <a href="{SourceURL}" target="_blank">{SourceTitle}</a>
+        
+		{/block:ContentSource}
+						
+		{block:RebloggedFrom}-
+		<a href="{ReblogParentURL}" title="{ReblogParentTitle}" target="_blank">{lang:Reblogged} {ReblogParentName}</a>
+		{/block:RebloggedFrom}
+		</div>
+		
+		</div>
+		{/block:Date}
+		</div>
+		<div id="disqus">
+{block:IfDisqusShortname}
+<script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+{block:Permalink}
+<div id="disqus_thread"></div>
+<script type="text/javascript">(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+				
+<noscript>
+Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a>
+</noscript>
+				
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a> {/block:Permalink}
+<script type="text/javascript">var disqus_shortname = '{text:Disqus Shortname}';(function () {var s = document.createElement('script'); s.async = true;s.src = 'http://disqus.com/forums/{text:Disqus Shortname}/count.js';(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script>	
+{/block:IfDisqusShortname}
+</div>
+		{block:PostNotes}
+		<div id="notes">
+		{PostNotes}
+		<div id="clear"></div>
+		</div>
+		{/block:PostNotes}
+		
+		<div id="clear"></div>
+		</div>
+		{/block:Permalink}
+		
+		{/block:Video}{block:Audio}
+		{Block:IndexPage}
+		<div id="inside">
+		<div id="fund">
+		
+		<div id="audio" class="indexpage">
+		{block:AlbumArt}
+		<div id="caixa">
+		<img src="{AlbumArtURL}" alt="{PhotoAlt}" width="238"/>
+		</div>
+		{/block:AlbumArt}
+		<div id="caixa" class="player">{AudioPlayerWhite}</div>
+		{block:Artist}<div id="caixa">Artist: {Artist}</div>{/block:Artist}  
+		{block:TrackName}<div id="caixa">Song: {TrackName}</div>{/block:TrackName}
+		{block:Album}<div id="caixa">Album: {Album}</div> {/block:Album}
+		<div id="caixa" class="ultimo">{lang:Plays}: {FormattedPlayCount}</div>
+		</div>
+		{block:Caption}
+		<div id="caption">{Caption}</div>
+		{/block:Caption}
+		
+		
+		
+		{block:Date}
+		<div id="options">
+		
+		<div id="details">
+		{DayOfMonth}/{MonthNumberWithZero}/{Year} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		
+		<a href="{Permalink}" title="{lang:Permalink for this post}">{lang:Permalink}</a> -
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		</div>
+		{/block:Date}
+		</div>
+		
+		
+		</div>
+		{/Block:IndexPage}
+		
+		
+		{block:Permalink}
+		<div id="inside" class="permalink">
+		<div id="right">
+		{block:HasTags}
+		<div id="tagged">
+		{block:Tags}
+		<a href="{TagURL}" title="{Tag}">#{Tag}</a> 
+		{/block:Tags}
+		</div>
+		{block:HasTags}
+		
+		
+		<div id="buttons">
+		<!-- BUTTON FACEBOOK -->
+		<fb:like href="{Permalink}" layout="button_count" send="false" show_faces="false" font="arial" action="like" colorscheme="light"></fb:like>
+		
+		<!-- BUTTOM GOOGLE +1 -->
+		<span id="plusone"><g:plusone size="medium" href="{Permalink}"></g:plusone></span>
+		</div>
+		</div>
+		
+		<div id="fund" class="permalink">
+		
+		<div id="audio" class="permalink">
+		<div id="imagem">
+		{block:AlbumArt}<img src="{AlbumArtURL}" alt="{PhotoAlt}" width="500"/>{/block:AlbumArt}
+		</div>
+		
+			
+		<div id="caixa">{AudioPlayerWhite}</div>
+		{block:Artist}<div id="caixa">Artist:{Artist}</div>{/block:Artist}  
+		{block:TrackName}<div id="caixa">Song:{TrackName}</div>{/block:TrackName}
+		{block:Album}<div id="caixa">Album: {Album}</div> {/block:Album}
+		<div id="caixa">{lang:Plays}:{FormattedPlayCount}</div>
+		</div>
+		
+		{block:Caption}
+		<div id="caption">{Caption}</div>
+		{/block:Caption}
+		
+		
+		
+		{block:Date}
+		<div id="options">
+		<div id="details">
+		Postado {DayOfMonth}/{MonthNumberWithZero}/{Year} ás {12Hour}:{Minutes}{AmPm} - {TimeAgo} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		
+		<div id="credits">
+		{block:ContentSource}
+        {lang:Source} <a href="{SourceURL}" target="_blank">{SourceTitle}</a>
+        
+		{/block:ContentSource}
+						
+		{block:RebloggedFrom}-
+		<a href="{ReblogParentURL}" title="{ReblogParentTitle}" target="_blank">{lang:Reblogged} {ReblogParentName}</a>
+		{/block:RebloggedFrom}
+		</div>
+		
+		</div>
+		{/block:Date}
+		</div>
+		<div id="disqus">
+{block:IfDisqusShortname}
+<script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+{block:Permalink}
+<div id="disqus_thread"></div>
+<script type="text/javascript">(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+				
+<noscript>
+Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a>
+</noscript>
+				
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a> {/block:Permalink}
+<script type="text/javascript">var disqus_shortname = '{text:Disqus Shortname}';(function () {var s = document.createElement('script'); s.async = true;s.src = 'http://disqus.com/forums/{text:Disqus Shortname}/count.js';(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script>	
+{/block:IfDisqusShortname}
+</div>
+		{block:PostNotes}
+		<div id="notes">
+		{PostNotes}
+		<div id="clear"></div>
+		</div>
+		{/block:PostNotes}
+		
+		<div id="clear"></div>
+		</div>
+		{/block:Permalink}
+		
+		{/block:Audio}{block:Answer}
+		{Block:IndexPage}
+		<div id="inside">
+		<div id="fund">
+		
+		<div id="asked" class="indexpage">
+		<div id="question"><span style="font-weight: bold; text-decoration:underline;">{Asker}</span>: {Question}</div>
+		<div id="answer">{Answer}</div>
+		</div>
+		
+		{block:Date}
+		<div id="options">
+		
+		<div id="details">
+		{DayOfMonth}/{MonthNumberWithZero}/{Year} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		
+			<a href="{Permalink}" title="{lang:Permalink for this post}">{lang:Permalink}</a> -
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		
+		</div>
+		{/block:Date}
+		</div>
+		</div>
+		{/Block:IndexPage}
+		
+		
+		{block:Permalink}
+		<div id="inside" class="permalink">
+		<div id="right">
+		{block:HasTags}
+		<div id="tagged">
+		{block:Tags}
+		<a href="{TagURL}" title="{Tag}">#{Tag}</a> 
+		{/block:Tags}
+		</div>
+		{block:HasTags}
+		
+		
+		<div id="buttons">
+		<!-- BUTTON FACEBOOK -->
+		<fb:like href="{Permalink}" layout="button_count" send="false" show_faces="false" font="arial" action="like" colorscheme="light"></fb:like>
+		
+		<!-- BUTTOM GOOGLE +1 -->
+		<span id="plusone"><g:plusone size="medium" href="{Permalink}"></g:plusone></span>
+		</div>
+		</div>
+		
+		
+		<div id="fund" class="permalink">
+		
+		<div id="asked">
+		<div id="question">{Asker}:{Question}</div>
+		<div id="answer">{Answer}</div>
+		</div>
+		
+		{block:Date}
+		<div id="options">
+		<div id="details">
+		Postado {DayOfMonth}/{MonthNumberWithZero}/{Year} ás {12Hour}:{Minutes}{AmPm} - {TimeAgo} -
+		{block:NoteCount}{NoteCountWithLabel} -{/block:NoteCount}
+		<a href="{ReblogURL}" title="{lang:Share this}" target="_blank">reblog</a>
+		</div>
+		</div>
+		{/block:Date}
+		</div>
+		
+		<div id="clear"></div>
+		</div>
+		{/block:Permalink}
+		
+		{/block:Answer}{/block:Posts}
+		
+		<div id="bottom">
+		
+		{block:Pagination}
+		<div id="pagination" align="right">			
+		{block:PreviousPage}
+		<a href="{PreviousPage}" title="Previous Page" id="previousPage">« {lang:Previous}</a>
+		{/block:PreviousPage}
+				
+		<span id="pages">{lang:Page CurrentPage of TotalPages}</span>
+			
+				
+		{block:NextPage}
+		<a href="{NextPage}" title="Next Page" id="nextPage">{lang:Next} »</a>
+		{/block:NextPage}
+		</div>
+		{/block:Pagination}
+		</div>
+		
+		</div>
+        
+        
+		<div id="clear"></div>
+		</div>
+		
+		{block:IfGoogleAnalyticsID}
+		<script type="text/javascript">var gaJsHost=(("https:"==document.location.protocol)?"https://ssl.":"http://www.");document.write(unescape("%3Cscript src='"+gaJsHost+"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">try{var pageTracker=_gat._getTracker("{text:Google Analytics ID}");pageTracker._trackPageview()}catch(err){}</script>
+		{/block:IfGoogleAnalyticsID}
+	    </body>
+		</html>
