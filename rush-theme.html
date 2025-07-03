@@ -1,0 +1,158 @@
+<!--Rush by ddylanjoness
+-->
+
+<head>
+<title>{Title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="image:Background" content=""/>
+<meta name="color:background" content="#BFBFC7"/>
+<meta name="image:Sidebar" content=""/>
+<meta name="if:Show Photo" content="0"/>
+<meta name="color:text" content="#757575"/>
+<meta name="color:link" content="#757575"/>
+<meta name="color:hover" content="#D4C7D8"/>
+<meta name="if:Show Blog Title" content="1"/>
+<meta name="if:Faded Images" content="1"/>
+<meta name="if:Show Links" content="1"/>
+<meta name="if:Show Captions" content="0"/>
+
+<style type="text/css">
+{block:ifFadedImages}img{-webkit-transition: opacity 0.5s linear;
+opacity: 0.90;}
+img:hover{-webkit-transition: opacity 0.5s linear;
+opacity: 2;}{/block:ifFadedImages}
+
+body {margin: 10px; background-color: {color:Background}; background-image:url ({image:Background}); background-attachment: fixed; background-repeat: repeat;}
+
+body, div, p, textarea, submit, input {font-family: verdana; font-size: 9px; letter-spacing: -1px; line-height: 10px; color:{color:Text};}
+
+p{margin:0px; margin-top: 1px;}
+
+a:link, a:active, a:visited {color: {color:Link}; text-decoration: none; -webkit-transition: color 0.3s ease-out; -moz-transition: color 0.3s ease-out; }
+
+a:hover {color:{color:Hover}; text-decoration: none;}
+
+#center {margin-top:-9px; margin-bottom:-10px; margin-left:-7px; position:relative; width:700px; background-color:; overflow:auto; overflow-y:hidden;}
+
+#content {float:left; width: 450px; padding: 1px; margin-left: 5px; background-color: white;}
+
+#sidebar {position:fixed !important; width: 180px; height:auto; background-color:#FFF; padding: 1px; margin-top: 10px; margin-left: 470px; }
+
+#entry {margin-top: 0px; margin-bottom: 2px;}
+
+.title {font-family: verdana; font-size: 9; letter-spacing: -1px; color: {color:text}; font-weight:normal;}
+
+.permalink {display: block; font-size: 10px; font-family: verdana; letter-spacing: -1px; margin-top:3px; margin-bottom: 2px; padding-bottom: 2px; background-color: white; position:relative; text-align:right; width: 450px;}
+
+.links {float: left; font-family: verdana; margin-bottom: 3px; font-size: 10px; letter-spacing: -1px; margin: 2px; background-color: #DDD; width: 81px; padding: 3px;}
+
+.links a {color: #555;}
+
+.links a:hover {color:{color:Hover};}
+
+.video embed, .post div.video object {width: 450px !important;}
+
+blockquote {padding:0px 0px 2px 5px; margin:0px 0px 2px 1px; border-left: 1px dotted {color:Text};}
+
+small {font-size:95%;}
+a img{border: 0px;}
+img{border: 0px;}
+
+a:link, a:active, a:visited{color: {color:Link}; text-decoration: none;}
+a:hover {color:{color:Hover}; text-decoration: none;
+}
+
+.user_1 .label, .user_2 .label, .user_3 .label, .user_4 .label, .user_5 .label, .user_6 .label, 
+.user_7 .label, .user_8 .label, .user_9 .label {color:{color:Title};}
+
+.notes img{width:10px; position:relative; top:0px;}
+
+</style>
+</head>
+<body>
+<div id="cage">
+<div id="center">
+<div id="sidebar">
+{block:ifshowblogtitle}<center><div class="blogtitle"><font face="Lobster"><a href="/"><big><big><big>{Title}</big></big></big></font></a></div></center><br>{/block:ifshowblogtitle}
+
+{block:ifshowphoto}<a href="/"><img src="{image:sidebar}" width=180px></a>{/block:ifshowphoto}
+
+{block:ifShowLinks}
+<div style="padding-top: 2px;"></div>
+<div class="links"><a href="/">Home</a></div>
+<div class="links"><a href="/ask">Message</a></div>
+<div class="links"><a href="/archive">Archive</a></div>
+{block:HasPages}{block:Pages}<div class="links"><a href="{URL}">{Label}</a></div>{/block:Pages}
+{/block:HasPages}
+<div class="links"><a href="http://ddylanjoness.tumblr.com">Theme</a></div>
+{/block:ifShowLinks}
+
+{Description}
+<br><br><br>
+<div align="center">
+{block:PreviousPage} <a href="{PreviousPage}"><font size="3">↞</font></a>{/block:PreviousPage}
+{block:NextPage}<a href="{NextPage}"><font size="3">↠</font></a>{/block:NextPage}
+{block:PermalinkPagination}
+{block:NextPost}<a href="{NextPost}"><font size="3">↞</font></a>{/block:NextPost}
+{block:PreviousPost}<a href="{PreviousPost}"><font size="3">↠</font></a>{/block:PreviousPost}{/block:PermalinkPagination}</div></div>
+
+<div id="content">
+<div id="a">
+{block:Posts}
+<div id="r">
+
+{block:Text}{block:Title}<span class="title">{Title}</span>{/block:Title}
+<span class="entrytext">{Body}</span>{/block:Text}
+
+{block:Link}<a href="{URL}" class="title">{Name}</a>{block:Description}{Description}{/block:Description}{/block:Link}
+
+{block:Photo}<center>{LinkOpenTag}<a href="{Permalink}"><img src="{PhotoURL-500}" alt="{PhotoAlt}" width=450px></a>{LinkCloseTag}</center>{block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}{/block:Photo}
+
+{block:Photoset}<div style="width:450px !important;">{Photoset-400}</div>{/block:Photoset}
+
+{block:Quote}<span class="title">{Quote}<br></span> - {block:Source} <b>{Source}</b>{/block:Source}{/block:Quote}
+
+{block:Chat}{block:Title}<span class="title">{Title}</span>{/block:Title}<ul class="chat">
+{block:Lines}<li class="user_{UserNumber}">{block:Label}<span class="label">{Label}</span>
+{/block:Label}{Line}</li>{/block:Lines}</ul>{/block:Chat}
+
+{block:Audio}<center><div style="width:420px; height:30px;"><div style="float:left">{AudioPlayerWhite}</div><div style="margin-top:10px; float:right;">
+{block:ExternalAudio} | <a href="{ExternalAudioURL}">Download</a>{/block:ExternalAudio}</div></div></center>{/block:permalinkpage}{block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}{/block:Audio}
+
+{block:Video}<div class="video">{Video-400}</div>{block:Video}
+
+<span class="permalink"><a href="{Permalink}"><a href="{Permalink}"><a href="{Permalink}">{block:Date}{Month} {DayOfMonth}, {Year} {/block:Date} · {notecount} notes </a></a><br>{/block:HasTags}</span>
+
+{block:PostNotes}
+
+<center>{block:RebloggedFrom}Reblogged from: <a href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom}
+<br>
+{block:ContentSource}
+Original poster: <a href="{SourceURL}">
+
+{block:SourceLogo}
+<img src="{BlackLogoURL}" width="{LogoWidth}"
+height="{LogoHeight}" alt="{SourceTitle}"/>{/block:SourceLogo}{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo}</a>{/block:ContentSource}
+</center>
+<br>
+
+
+</span>
+{NoteCountWithlabel}
+<div id="postnotes">{PostNotes}</div><br>
+{block:ContentSource}
+<br><a href="{SourceURL}">
+{lang:Source}: {block:SourceLogo}
+<img src="{BlackLogoURL}" width="{LogoWidth}"
+height="{LogoHeight}" alt="{SourceTitle}" />
+{/block:SourceLogo}
+{block:NoSourceLogo}
+{SourceLink}{/block:NoSourceLogo}</a>{/block:ContentSource}{/block:PostNotes}
+
+</div>
+{/block:Posts}
+</div>
+{block:ifNotShowLinks}<center>theme by: <a href="http://ddylanjoness.tumblr.com">ddylanjoness</a> c:</small></center>{/block:ifNotShowLinks}
+</div></div>
+</body>
+</html>
