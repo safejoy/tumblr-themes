@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head> 
+<!-- Your Move by ddylanjoness -->
+
+<!-- DEFAULT VARIABLES -->
+
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+{block:IfEndlessScrolling}
+<script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>
+{/block:IfEndlessScrolling}
+
+<meta name="font:body" content="Futura" />
+<meta name="color:background" content="#ffffff" />
+<meta name="color:font" content="#666666" />
+<meta name="text:font" content="8pt">
+<meta name="color:link" content="#78b333" />
+<meta name="color:hover" content="#252525" />
+<meta name="color:main" content="#ffffff" />
+<meta name="if:Endless Scrolling" content="0" />
+<meta name="if:Hide Captions" content="1" />
+<meta name="if:Show Icon" content="0" />
+<meta name="if:Justify Description" content="1" />
+
+<style type="text/css">
+
+body{
+color:{color:font}; 
+background-color:{color:background}; 
+background-repeat: repeat; 
+font-family:{font:body}; 
+font-size:{text:font}; 
+text-align:justify; 
+line-height: 13px; 
+}
+
+.title a{
+font-size:15px; 
+letter-spacing:-1px; 
+padding-bottom:5px; 
+padding-top:5px;
+color:{color:hover}; 
+font-family:{font:body}; 
+font-weight:bold
+}
+
+.title a:hover {
+color:{color:link};
+}
+
+a img {
+border:0px;
+}
+
+a {
+text-decoration:none;
+color:{color:link};
+text-transform:lowercase;
+-moz-transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+a:hover{
+color:{color:hover};
+-moz-transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+.pagelinks {
+width:250px;
+margin-right:3px;
+}
+
+#entry{ 
+width:500px; 
+background:#ffffff; 
+margin-bottom:15px;
+margin-top:10px;
+padding:8px;
+border:1px solid #a6a6a6;
+box-shadow: 3px 3px 5px #bcbcbc;
+}
+
+#main {
+width:516px;
+height:auto;
+position:absolute;
+left:280px;
+top:0px;
+background:{color:main};
+border-left:0px dashed #999999;
+padding-right:10px; 
+padding-left:10px;
+}
+
+#textperma {
+color:#f4f4f4; 
+opacity:0;
+font-family:{font:body}; 
+font-size:10pt;
+margin-left:520px; 
+position:absolute; 
+z-index:1;
+}
+
+#entry:hover #textperma {
+display: block; 
+opacity:1;
+}
+
+#ask{ 
+display:block; 
+float: left; 
+width:50px; 
+overflow:hidden; 
+word-wrap:break-word; 
+margin-right:3px;
+}
+
+b, strong{
+color:#000000;
+}
+
+blockquote {
+border-left:2px solid #e0e0e0;
+padding-left:5px;
+margin-left:10px;
+}
+blockquote img {
+max-width:30px;
+display:block;
+border-left: 2px solid #e0e0e0;
+padding-left:5px;
+margin-left:10px;
+}
+
+img {
+max-width:500px;
+}
+
+.audio {
+width: 498px; 
+background-color:#ffffff;
+border:0px solid #999999;
+}
+
+ul.chat, .chat ol, .chat li {
+margin:0px; 
+padding:3px; 
+}
+
+.notes img{
+display:none;
+}
+
+.head {
+width:190px;
+height:auto;
+}
+
+{CustomCSS}
+</style>
+
+</head>
+
+<body>
+
+
+<div class="pagelinks" style="word-spacing:8px; padding-top:2px; text-align:left;margin-left:0px;display:block;position:fixed;">
+{block:IfShowIcon}<center><img src="{PortraitURL-128}">
+<p><div class="title" style="margin-bottom:4px;"><a href="/"><i>{Title}</i></a></div>
+<a href="/ask">ask</a> 
+<a href="/archive">archive</a>
+{block:HasPages}{block:Pages}
+<a href="{URL}" style="font-size:7.5pt;">{Label}</a>{/block:Pages}{/block:HasPages} 
+<a href="http://criminoso.tumblr.com/">theme</a></center>
+{block:IfJustifyDescription}{block:Description}<div style="width:auto;text-align:justify;word-spacing:0.5px;margin-top:3px;margin-left:10px;">{Description}</div>{/block:Description}{/block:IfJustifyDescription}
+{block:IfNotJustifyDescription}{block:Description}<div style="width:auto;text-align:center;word-spacing:0.5px;margin-top:3px;margin-left:10px;">{Description}</div>{/block:Description}{/block:IfNotJustifyDescription}{/block:IfShowIcon}
+
+{block:IfNotShowIcon}<div class="title" style="margin-bottom:4px;"><a href="/"><i>{Title}</i></a></div><a href="/ask">ask</a> 
+<a href="/archive">archive</a>
+{block:HasPages}{block:Pages}
+<a href="{URL}" style="font-size:7.5pt;">{Label}</a>{/block:Pages}{/block:HasPages} 
+{block:IfJustifyDescription}{block:Description}<div style="width:auto;text-align:justify;word-spacing:0.5px;margin-top:3px;">{Description}</div>{/block:Description}{/block:IfJustifyDescription}
+{block:IfNotJustifyDescription}{block:Description}<div style="width:auto;text-align:left;word-spacing:0.5px;margin-top:3px;">{Description}</div>{/block:Description}{/block:IfNotJustifyDescription}{/block:IfNotShowIcon}
+<br></div>
+
+<div id="main">
+
+{block:Posts}
+
+<div id="entry">
+
+{block:Text}<div id="textperma"><a href="{Permalink}">{NoteCountWithLabel}</a></div>
+{block:Title}<div style="font:11pt georgia;font-weight:bold;"><i>{Title}</i></div>{/block:Title}{Body}
+{block:PermalinkPage}
+        {block:Posts}
+            <div class="post">
+                {block:Text}{/block:Text}
+                {block:Photo}{/block:Photo}
+                {block:HasTags}
+                    <b>Tagged:</b>&nbsp;
+                        {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>, &nbsp;
+                        {/block:Tags}
+                    
+                {/block:HasTags}
+            </div>
+        {/block:Posts}
+{/block:PermalinkPage}
+{/block:Text}
+
+
+{block:Photo}<div id="textperma"><a href="{Permalink}">{NoteCountWithLabel}</a></div>
+{block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
+{block:PermalinkPage}{LinkOpenTag}{/block:PermalinkPage}
+<img src="{block:IndexPage}{PhotoURL-HighRes}{/block:IndexPage}{block:PermalinkPage}{PhotoURL-HighRes}{/block:PermalinkPage}" alt="{PhotoAlt}" width="500px"/>{block:IndexPage}</a>{/block:IndexPage}{block:IfNotHideCaptions}{Caption}{/block:IfNotHideCaptions}{block:PermalinkPage}
+{LinkCloseTag}
+{block:IfHideCaptions}{block:Caption}{Caption}{/block:Caption}{/block:IfHideCaptions}
+        {block:Posts}
+            <div class="post">
+                {block:Text}{/block:Text}
+                {block:Photo}{/block:Photo}
+                {block:HasTags}
+                    <b>Tagged:</b>&nbsp;
+                        {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>, &nbsp;
+                        {/block:Tags}
+                    
+                {/block:HasTags}
+            </div>
+        {/block:Posts}
+{/block:PermalinkPage}
+{/block:Photo}
+
+
+{block:Photoset}<div id="textperma"><a href="{Permalink}">{NoteCountWithLabel}</a></div>{Photoset-500}{/block:Photoset}
+
+
+{block:Quote}<div id="textperma"><a href="{Permalink}">{NoteCountWithLabel}</a></div>
+
+<span style="font-family:{font:body}; font-size:{text:font};"><i>{Quote}</i></span> &nbsp;{block:Source}~<span style="text-transform:uppercase;font-size:7pt;font-weight:bold;color:#666666;">{Source}</span>{/block:Source}
+{block:PermalinkPage}
+        {block:Posts}
+            <div class="post">
+                {block:Text}{/block:Text}
+                {block:Photo}{/block:Photo}
+                {block:HasTags}
+                    <b>Tagged:</b>&nbsp;
+                        {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>, &nbsp;
+                        {/block:Tags}
+                    
+                {/block:HasTags}
+            </div>
+        {/block:Posts}
+{/block:PermalinkPage}
+
+{/block:Quote}
+
+
+
+{block:Link} <div id="textperma"><a href="{Permalink}">{NoteCountWithLabel}</a></div>
+
+<div class="title"><a href="{URL}" {Target}><i>{Name}</i></a></div>{block:Description}{Description}{/block:Description}
+{block:PermalinkPage}
+        {block:Posts}
+            <div class="post">
+                {block:Text}{/block:Text}
+                {block:Photo}{/block:Photo}
+                {block:HasTags}
+                    <b>Tagged:</b>&nbsp;
+                        {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>, &nbsp;
+                        {/block:Tags}
+                    
+                {/block:HasTags}
+            </div>
+        {/block:Posts}
+{/block:PermalinkPage}
+
+{/block:Link}
+
+
+{block:Chat}
+<div id="textperma"><a href="{Permalink}">{NoteCountWithLabel}</a></div>
+{block:Title}{Title}{/block:Title}
+
+<div class="lines" style="line-height:25px;">{block:Lines}<div class="line {Alt}">{block:Label}<b>{Label} </b>{/block:Label}{Line}</div>{/block:Lines}</div>
+{block:PermalinkPage}
+        {block:Posts}
+            <div class="post">
+                {block:Text}{/block:Text}
+                {block:Photo}{/block:Photo}
+                {block:HasTags}
+                    <b>Tagged:</b>&nbsp;
+                        {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>, &nbsp;
+                        {/block:Tags}
+                    
+                {/block:HasTags}
+            </div>
+        {/block:Posts}
+{/block:PermalinkPage}
+
+{/block:Chat}
+
+
+{block:Audio} <div id="textperma"><a href="{Permalink}">{NoteCountWithLabel}<BR>
+
+{block:ExternalAudio}<a href="{ExternalAudioURL}">Download</a>{/block:ExternalAudio}</a></div>
+
+<div class="audio">{AudioPlayerWhite}</div>
+{block:PermalinkPage}
+{block:Caption}{Caption}{/block:Caption}
+        {block:Posts}
+            <div class="post">
+                {block:Text}{/block:Text}
+                {block:Photo}{/block:Photo}
+                {block:HasTags}
+                    <b>Tagged:</b>&nbsp;
+                        {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>, &nbsp;
+                        {/block:Tags}
+                    
+                {/block:HasTags}
+            </div>
+        {/block:Posts}
+{/block:PermalinkPage}
+
+{/block:Audio}
+
+
+{block:Video}
+<div id="textperma"><a href="{Permalink}">{NoteCountWithLabel}</a></div>
+{Video-500}
+{block:PermalinkPage}
+        {block:Posts}
+            <div class="post">
+                {block:Text}{/block:Text}
+                {block:Photo}{/block:Photo}
+                {block:HasTags}
+                    <b>Tagged:</b>&nbsp;
+                        {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>, &nbsp;
+                        {/block:Tags}
+                    
+                {/block:HasTags}
+            </div>
+        {/block:Posts}
+{/block:PermalinkPage}
+
+{/block:Video}
+
+
+{block:Answer}
+<div id="textperma"><a href="{Permalink}">{NoteCountWithLabel}</a></div>
+<div style="background:none;font:{text:font} {font:body};margin-bottom:-1px;color:#252525;padding:3px;padding-left:5px;padding-right:5px;">
+<b>{Question} </b><font style="color:#666666;font-style:italic;">by {Asker}</font></div>
+<div style="margin-top:-1px;color:#777777;background:none;padding:1px;padding-left:5px;padding-right:5px;">{Answer}</div>
+{block:PermalinkPage}
+        {block:Posts}
+            <div class="post">
+                {block:Text}{/block:Text}
+                {block:Photo}{/block:Photo}
+                {block:HasTags}
+                    <b>Tagged:</b>&nbsp;
+                        {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>, &nbsp;
+                        {/block:Tags}
+                    
+                {/block:HasTags}
+            </div>
+        {/block:Posts}
+{/block:PermalinkPage}
+{/block:Answer}
+
+{block:PostNotes}{PostNotes}{/block:PostNotes}
+
+</div>
+
+{/block:Posts}
+
+{block:IfNotEndlessScrolling}
+<div style="position:fixed;bottom:75px;left:955px;">
+{block:NextPage}<a href="{NextPage}" style="font:20pt georgia;font-weight:bold;">&#8594;</a>{/block:NextPage}
+<br>{block:PreviousPage}<a href="{PreviousPage}" style="font:20pt georgia;font-weight:bold;">&#8592;</a>{/block:PreviousPage}
+</div>
+{/block:IfNotEndlessScrolling}
+
+</div>
+</div>
+
+<div style="position:fixed; bottom:3px; right:3px; font-size:10px; letter-spacing:0px; opacity:.6; background-color:{color:link hover};"><a href="http://ddylanjoness.tumblr.om">theme</a></div>
+</body>
+
+</html>
