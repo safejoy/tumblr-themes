@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head>
+<title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+<link rel="shortcut icon" href="{Favicon}" />
+<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+<meta name="color:Background" content="#DBDBDB" />
+<meta name="color:Text" content="#787878" />
+<meta name="color:Links" content="#787878" />
+<meta name="color:Box" content="#ffffff" />
+<meta name="color:Hover" content="#B8B6B6" />
+
+
+<style type="text/css">
+body { background-color: {color:Background}; color: {color:Text}; font-family: arial;
+ font-size: 11px;}
+
+
+a:link, a:visited, a:active { color: {color:Links}; text-decoration: none;}
+a:hover {text-decoration: none; color: {color:Hover};}
+p { margin: 5px 0; padding: 0; line-height: 14px;}
+img { border: none; }
+ul, ol { margin: 5px 0 0 0; padding: 0 0 0 25px;}
+blockquote { margin: 1px 2px 2px 2px; padding: 1px 2px 1px 4px; border: 0px solid {color:Text};}
+blockquote p { margin: 0; padding: 0; line-height: 12px;}
+big { line-height: 100%; }
+.title { font-family: {font:Title}; font-size: 20px; font-weight: none; letter-spacing: 2px;
+text-align: left;}
+.navi {background-color: {color:Box}; letter-spacing: 0; float: right; font-family: {font:Body}; font-size: 10px; font-weight: normal; margin: 5px 0 0 0; padding: 5px; }
+.navi a {padding: 0 2px;}
+.text, .quote, .link, .answer { font-family: {font:Title}; font-size: 15px; letter-spacing: 1px; line-height: 17px;} 
+ul.chat { list-style-type: none; padding: 0; margin: 0; }
+.user_1 .label, .user_3 .label, .user_5 .label { color: {color:Text}; }
+.user_2 .label, .user_4 .label, .user_6 .label { color: {color:Links}; }
+ul.chat li {margin: 3px 0 3px 0;}
+{block:IndexPage}
+
+
+
+
+
+.posts:hover .details {visibility: visible;}{/block:IndexPage}
+div.page { background-color: {color:Box}; clear: both; display: block; font-weight: none; overflow: auto; margin: 10px 0; padding: 10px; text-align: center; font-family: Arial; size:16px;}
+div.page a.old {color: {color:Table}; float: right;font-size: 16px; padding: 5px; }
+div.page a.new { color: {color:Table}; float: left; font-size: 16px; padding: 5px; }
+div.page a:hover {text-decoration: none; color: {color:Hover};}
+{block:PermalinkPage}
+div.foot { background-color: white; font-family: Arial; margin: 500px 0; padding: 600px; }
+{/block:PermalinkPage}
+#main {margin: 0px auto; overflow: auto; padding: 0; text-align: justify; width: 1200px;}
+#posts {background-color: {color:Box}; margin: 0; padding: 10px; width: 510px;}
+#sidebar { margin: 0; padding: 45px; width: 900px;}
+{CustomCSS}
+</style>
+
+</head>
+
+<body>
+<div align="center">
+<table id="main" cellpadding="0" cellspacing="0"><tr>
+<td id="posts" valign="top">
+{block:Posts}
+<div class="posts">
+{block:Text}{block:Title}<div class="text">{Title}</div>{/block:Title}{Body}{/block:Text}
+{block:Photo}<center>{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}">{LinkCloseTag}</center>
+{block:Photo}{block:Photoset}
+{block:IndexPage}<p align="center">{Photoset-500}</p>{/block:IndexPage}
+{block:PermalinkPage}{Photoset-500}{/block:PermalinkPage}
+{block:Caption}{Caption}{/block:Caption}
+{/block:Photoset}
+{block:Quote}<div class="quote">{Quote}</div>{block:Source}{Source}{/block:Source} {/block:Quote}
+{block:Link}<a href="{URL}" {Target} class="link" style="display: block; {block:IndexPage}margin: 10px 0 0 0;{/block:IndexPage}">
+{Name}</a>{block:Description}{Description}{/block:Description}{/block:Link}
+{block:Chat}{block:Title}<div class="text">{Title}</div>{/block:Title}<ul class="chat">{block:Lines}<li class="user_{UserNumber}">{block:Label}<span class="label">{Label}</span>
+{/block:Label} {Line}</li>{/block:Lines}</ul>{/block:Chat}
+{block:Audio}
+<div {block:IndexPage}style="margin: 10px 0 0 0;"{/block:IndexPage}>{AudioPlayerBlack}</div>
+{block:Caption}{Caption}{/block:Caption}
+{/block:Audio}
+{block:Video}{block:IndexPage}<p align="center">{Video-500}</p>{/block:IndexPage}{block:PermalinkPage}{Video-500}{/block:PermalinkPage}{block:Caption}{Caption}{/block:Caption}
+{/block:Video}
+{block:IndexPage}
+<p align="right"><a href="{Permalink}">{PostNotes}{NoteCount} notes</a></p>{/block:IndexPage}
+</div>
+{/block:Posts}
+{block:PostNotes}{PostNotes}{/block:PostNotes}
+<p id="footer">
+{block:Pagination}<div class="page">
+{block:PreviousPage}<a href="{PreviousPage}" class="new">&#171; Previous</a>
+{/block:PreviousPage}
+{block:NextPage}<a href="{NextPage}" class="old">Previous &#187;</a>{/block:NextPage}<br>
+</div>{/block:Pagination}
+{block:PermalinkPagination}<div class="page">
+{block:NextPost}<a href="{NextPost}" class="new">&#171; Next</a>{/block:NextPost}
+{block:PreviousPost}<a href="{PreviousPost}" class="old">Next &#187;</a>{/block:PreviousPost}
+</div>{/block:PermalinkPagination}
+</td><td width="20"></td>
+<td width="sidebar" valign="top">  
+		{block:AskEnabled}  <a href="/ask"></a>{/block:AskEnabled}
+		{block:SubmissionsEnabled}  <a href="/submit"></a>{/block:SubmissionsEnabled}
+		{block:HasPages}{block:Pages}  <a href="{URL}" class="page">{Label}</a>{/block:Pages}{/block:HasPages}</p>
+<a href="{Permalink}"><div class="title">{Title}</div></a><p>
+{block:Description}<p>{Description}</p>{/block:Description}<br/>
+
+
+
+<p>Powered by <a href="http://tumblr.com">Tumblr</a> Theme by <a href="https://greattideflow.tumblr.com">Joy Flowers</a></p>
+
+</body>
+</html>
